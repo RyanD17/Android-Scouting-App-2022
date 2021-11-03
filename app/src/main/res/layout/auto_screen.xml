@@ -6,6 +6,95 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
+    <ImageView
+        android:id="@+id/timerPng"
+        android:layout_width="41dp"
+        android:layout_height="17dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.848"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@android:drawable/ic_lock_idle_alarm" />
+
+    <ImageView
+        android:id="@+id/teamPNG"
+        android:layout_width="41dp"
+        android:layout_height="17dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="60dp"
+        app:layout_constraintEnd_toStartOf="@+id/timerPng"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/simple_two_business_people_handshake_line_icon_symbol_sign_vector_illustration_design_isolated_white_background_element_110609180" />
+
+    <ImageView
+        android:id="@+id/layerPNG"
+        android:layout_width="41dp"
+        android:layout_height="17dp"
+        app:layout_constraintBottom_toTopOf="@+id/matchTimer"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.153"
+        app:srcCompat="@drawable/layers_59_460671" />
+
+    <TextView
+        android:id="@+id/matchNumber"
+        android:layout_width="wrap_content"
+        android:layout_height="17dp"
+        android:layout_marginEnd="116dp"
+        android:text="TextView"
+        app:layout_constraintBottom_toTopOf="@+id/matchTimer"
+        app:layout_constraintEnd_toStartOf="@+id/teamPNG"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.153" />
+
+    <ImageView
+        android:id="@+id/boardPNG"
+        android:layout_width="wrap_content"
+        android:layout_height="17dp"
+        app:layout_constraintBottom_toTopOf="@+id/matchTimer"
+        app:layout_constraintEnd_toStartOf="@+id/boardTxt"
+        app:layout_constraintHorizontal_bias="0.333"
+        app:layout_constraintStart_toEndOf="@+id/matchNumber"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.153"
+        app:srcCompat="@android:drawable/ic_input_get" />
+
+    <TextView
+        android:id="@+id/boardTxt"
+        android:layout_width="wrap_content"
+        android:layout_height="17dp"
+        android:layout_marginEnd="8dp"
+        android:text="TextView"
+        app:layout_constraintBottom_toTopOf="@+id/matchTimer"
+        app:layout_constraintEnd_toStartOf="@+id/teamPNG"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.153" />
+
+    <TextView
+        android:id="@+id/teamNumber"
+        android:layout_width="wrap_content"
+        android:layout_height="17dp"
+        android:text="TextView"
+        app:layout_constraintBottom_toTopOf="@+id/matchTimer"
+        app:layout_constraintEnd_toStartOf="@+id/timerPng"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/teamPNG"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.153" />
+
+    <TextView
+        android:id="@+id/timerTxt"
+        android:layout_width="wrap_content"
+        android:layout_height="17dp"
+        android:text="TextView"
+        app:layout_constraintBottom_toTopOf="@+id/matchTimer"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/timerPng"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.153" />
+
     <TextView
         android:id="@+id/auto_txt"
         android:layout_width="wrap_content"
@@ -14,6 +103,65 @@
         android:textSize="24sp"
         app:layout_constraintBottom_toTopOf="@+id/linearLayout"
         app:layout_constraintStart_toStartOf="parent" />
+
+    <ProgressBar
+        android:id="@+id/matchTimer"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.623" />
+
+    <Button
+        android:id="@+id/startMatchTimer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Start Timer"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.537"
+        app:layout_constraintStart_toEndOf="@+id/auto_txt"
+        app:layout_constraintTop_toBottomOf="@+id/matchTimer"
+        app:layout_constraintVertical_bias="1.0"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <ImageButton
+        android:id="@+id/pauseBtn"
+        android:layout_width="50dp"
+        android:layout_height="44dp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout"
+        app:layout_constraintStart_toStartOf="@+id/startMatchTimer"
+        app:srcCompat="@android:drawable/ic_media_pause"
+        tools:visibility="invisible" />
+
+    <ImageButton
+        android:id="@+id/undoBtn"
+        android:layout_width="53dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="6dp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout"
+        app:layout_constraintEnd_toEndOf="@+id/startMatchTimer"
+        app:layout_constraintTop_toTopOf="@+id/startMatchTimer"
+        app:srcCompat="@android:drawable/ic_menu_revert"
+        tools:visibility="invisible" />
+
+    <ImageButton
+        android:id="@+id/commentBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="@+id/undoBtn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/startMatchTimer"
+        app:srcCompat="@android:drawable/sym_action_chat"
+        tools:ignore="SpeakableTextPresentCheck,ImageContrastCheck"
+        tools:visibility="visible" />
 
     <LinearLayout
         android:id="@+id/linearLayout"
@@ -44,20 +192,14 @@
 
                 <TextView
                     android:id="@+id/OppTrenchCount"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="46dp"
+                    android:layout_height="42dp"
                     android:gravity="right"
-                    android:text="@string/_0"
+                    android:text="0"
                     android:textColor="@android:color/white"
                     android:textColorHint="@color/white"
                     android:textSize="24sp"
                     android:visibility="visible" />
-
-            </FrameLayout>
-
-            <FrameLayout
-                android:layout_width="5dp"
-                android:layout_height="match_parent">
 
             </FrameLayout>
 
@@ -76,7 +218,7 @@
                     android:id="@+id/RendezvousCount"
                     android:layout_width="59dp"
                     android:layout_height="44dp"
-                    android:text="@string/_0"
+                    android:text="0"
                     android:textColor="@android:color/white"
                     android:textColorHint="@color/white"
                     android:textSize="14sp" />
@@ -117,6 +259,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:baselineAligned="false"
             android:orientation="horizontal">
 
             <FrameLayout
@@ -156,7 +299,6 @@
                     android:id="@+id/AutoHighHit"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_weight="1"
                     android:text="@string/auto_high_hit" />
 
                 <TextView
@@ -175,6 +317,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:baselineAligned="false"
             android:orientation="horizontal">
 
             <FrameLayout
@@ -244,59 +387,46 @@
                 android:id="@+id/crossBtn"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
+                android:background="@android:color/holo_red_dark"
                 android:text="@string/cross"
-                android:textColor="#455A64"
+                android:textColor="#B2EBF2"
                 android:textOff="@string/cross"
                 android:textOn="@string/cross" />
-
-            <FrameLayout
-                android:layout_width="5dp"
-                android:layout_height="match_parent">
-
-            </FrameLayout>
 
             <ToggleButton
                 android:id="@+id/trenchBtn"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
+                android:background="@android:color/holo_red_dark"
                 android:text="@string/trench"
-                android:textColor="#455A64"
+                android:textColor="#B2EBF2"
                 android:textOff="@string/trench"
                 android:textOn="@string/trench" />
-
-            <FrameLayout
-                android:layout_width="5dp"
-                android:layout_height="match_parent">
-
-            </FrameLayout>
 
             <ToggleButton
                 android:id="@+id/midBtn"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
+                android:background="@android:color/holo_red_dark"
                 android:text="@string/mid"
-                android:textColor="#455A64"
+                android:textColor="#B2EBF2"
                 android:textOff="@string/mid"
                 android:textOn="@string/mid" />
-
-            <FrameLayout
-                android:layout_width="5dp"
-                android:layout_height="match_parent">
-
-            </FrameLayout>
 
             <ToggleButton
                 android:id="@+id/targetBtn"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
+                android:background="@android:color/holo_red_dark"
                 android:text="@string/target"
-                android:textColor="#455A64"
+                android:textColor="#B2EBF2"
                 android:textOff="@string/target"
                 android:textOn="@string/target" />
         </LinearLayout>
 
     </LinearLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

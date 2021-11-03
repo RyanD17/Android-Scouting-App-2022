@@ -1,30 +1,9 @@
 <resources>
     <string name="app_name">scoutingApp</string>
-    <string name="_0">0</string>
-    <string name="auto_high_hit">Auto High Hit</string>
-    <string name="_0">0</string>
-    <string name="auto_low_miss">Auto Low Miss</string>
-    <string name="_0">0</string>
-    <string name="auto_high_miss">Auto High Miss</string>
-    <string name="_0">0</string>
-    <string name="field_area">Field Area</string>
-    <string name="cross">Cross</string>
-    <string name="cross">Cross</string>
-    <string name="cross">Cross</string>
-    <string name="trench">Trench</string>
-    <string name="trench">Trench</string>
-    <string name="trench">Trench</string>
-    <string name="mid">Mid</string>
-    <string name="mid">Mid</string>
-    <string name="mid">Mid</string>
-    <string name="target">Target</string>
-    <string name="target">Target</string>
-    <string name="target">Target</string>
     <string name="auto_low_hit">Auto Low Hit</string>
     <string name="alliance_trench">alliance Trench</string>
-    <string name="_0">0</string>
     <string name="rendezvous">rendezvous</string>
     <string name="opponent_trench">Opponent Trench</string>
-    <string name="_0">0</string>
     <string name="auto">Auto</string>
+    <string name="start_timer" />
 </resources>
