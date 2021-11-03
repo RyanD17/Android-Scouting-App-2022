@@ -50,7 +50,6 @@ public class MainActivity extends AppCompatActivity {
         matchTimer.setMax(165);
         matchTimer.setProgress(0);
 
-        timer =
 
         //code for making the alliance trench button work
         allianceTrenchBtn.setOnClickListener(new View.OnClickListener() { //I call the onClickListener function
