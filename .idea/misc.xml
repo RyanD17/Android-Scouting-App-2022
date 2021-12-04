@@ -5,6 +5,11 @@
       <map>
         <entry key="..\:/Users/owner/AndroidStudioProjects/scoutingApp/app/src/main/res/layout/activity_main.xml" value="0.1796875" />
         <entry key="..\:/Users/owner/AndroidStudioProjects/scoutingApp/app/src/main/res/layout/auto_screen.xml" value="0.4466666666666667" />
+        <entry key="..\:/Users/test/StudioProjects/Android-Scouting-App-2020/app/src/main/res/layout-sw600dp/auto_screen.xml" value="0.134765625" />
+        <entry key="..\:/Users/test/StudioProjects/Android-Scouting-App-2020/app/src/main/res/layout/activity_comment.xml" value="0.22" />
+        <entry key="..\:/Users/test/StudioProjects/Android-Scouting-App-2020/app/src/main/res/layout/auto_screen.xml" value="0.3333333333333333" />
+        <entry key="..\:/Users/test/StudioProjects/Android-Scouting-App-2020/app/src/main/res/layout/comment_button.xml" value="0.1" />
+        <entry key="..\:/Users/test/StudioProjects/Android-Scouting-App-2020/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.19583333333333333" />
       </map>
     </option>
   </component>
@@ -13,5 +18,12 @@
   </component>
   <component name="ProjectType">
     <option name="id" value="Android" />
+  </component>
+  <component name="VisualizationToolProject">
+    <option name="state">
+      <ProjectState>
+        <option name="scale" value="0.1796875" />
+      </ProjectState>
+    </option>
   </component>
 </project>

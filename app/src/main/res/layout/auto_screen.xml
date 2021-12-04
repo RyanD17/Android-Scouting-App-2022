@@ -10,43 +10,44 @@
         android:id="@+id/timerPng"
         android:layout_width="41dp"
         android:layout_height="17dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginBottom="40dp"
+        app:layout_constraintBottom_toTopOf="@+id/matchTimer"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.848"
+        app:layout_constraintHorizontal_bias="0.748"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@android:drawable/ic_lock_idle_alarm" />
 
     <ImageView
         android:id="@+id/teamPNG"
         android:layout_width="41dp"
         android:layout_height="17dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="60dp"
+        android:layout_marginEnd="84dp"
+        android:layout_marginBottom="40dp"
+        app:layout_constraintBottom_toTopOf="@+id/matchTimer"
         app:layout_constraintEnd_toStartOf="@+id/timerPng"
-        app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/simple_two_business_people_handshake_line_icon_symbol_sign_vector_illustration_design_isolated_white_background_element_110609180" />
 
     <ImageView
         android:id="@+id/layerPNG"
         android:layout_width="41dp"
         android:layout_height="17dp"
+        android:layout_marginStart="48dp"
         app:layout_constraintBottom_toTopOf="@+id/matchTimer"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.153"
+        app:layout_constraintVertical_bias="0.264"
         app:srcCompat="@drawable/layers_59_460671" />
 
     <TextView
         android:id="@+id/matchNumber"
         android:layout_width="wrap_content"
         android:layout_height="17dp"
-        android:layout_marginEnd="116dp"
+        android:layout_marginEnd="108dp"
         android:text="TextView"
         app:layout_constraintBottom_toTopOf="@+id/matchTimer"
         app:layout_constraintEnd_toStartOf="@+id/teamPNG"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.153" />
+        app:layout_constraintVertical_bias="0.263" />
 
     <ImageView
         android:id="@+id/boardPNG"
@@ -54,10 +55,10 @@
         android:layout_height="17dp"
         app:layout_constraintBottom_toTopOf="@+id/matchTimer"
         app:layout_constraintEnd_toStartOf="@+id/boardTxt"
-        app:layout_constraintHorizontal_bias="0.333"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toEndOf="@+id/matchNumber"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.153"
+        app:layout_constraintVertical_bias="0.264"
         app:srcCompat="@android:drawable/ic_input_get" />
 
     <TextView
@@ -69,7 +70,7 @@
         app:layout_constraintBottom_toTopOf="@+id/matchTimer"
         app:layout_constraintEnd_toStartOf="@+id/teamPNG"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.153" />
+        app:layout_constraintVertical_bias="0.264" />
 
     <TextView
         android:id="@+id/teamNumber"
@@ -78,10 +79,10 @@
         android:text="TextView"
         app:layout_constraintBottom_toTopOf="@+id/matchTimer"
         app:layout_constraintEnd_toStartOf="@+id/timerPng"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/teamPNG"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.153" />
+        app:layout_constraintVertical_bias="0.35" />
 
     <TextView
         android:id="@+id/timerTxt"
@@ -90,10 +91,10 @@
         android:text="TextView"
         app:layout_constraintBottom_toTopOf="@+id/matchTimer"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.371"
         app:layout_constraintStart_toEndOf="@+id/timerPng"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.153" />
+        app:layout_constraintVertical_bias="0.35" />
 
     <TextView
         android:id="@+id/auto_txt"
@@ -114,7 +115,7 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.623" />
+        app:layout_constraintVertical_bias="0.547" />
 
     <Button
         android:id="@+id/startMatchTimer"
@@ -140,25 +141,14 @@
         tools:visibility="invisible" />
 
     <ImageButton
-        android:id="@+id/undoBtn"
-        android:layout_width="53dp"
-        android:layout_height="48dp"
-        android:layout_marginTop="6dp"
-        android:visibility="invisible"
-        app:layout_constraintBottom_toTopOf="@+id/linearLayout"
-        app:layout_constraintEnd_toEndOf="@+id/startMatchTimer"
-        app:layout_constraintTop_toTopOf="@+id/startMatchTimer"
-        app:srcCompat="@android:drawable/ic_menu_revert"
-        tools:visibility="invisible" />
-
-    <ImageButton
         android:id="@+id/commentBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:visibility="visible"
-        app:layout_constraintBottom_toBottomOf="@+id/undoBtn"
+        app:layout_constraintBottom_toBottomOf="@+id/startMatchTimer"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/startMatchTimer"
+        app:layout_constraintTop_toTopOf="@+id/startMatchTimer"
         app:srcCompat="@android:drawable/sym_action_chat"
         tools:ignore="SpeakableTextPresentCheck,ImageContrastCheck"
         tools:visibility="visible" />
@@ -166,7 +156,7 @@
     <LinearLayout
         android:id="@+id/linearLayout"
         android:layout_width="match_parent"
-        android:layout_height="521dp"
+        android:layout_height="450dp"
         android:orientation="vertical"
         android:weightSum="4"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -176,12 +166,30 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginStart="0dp"
+            android:layout_marginTop="0dp"
             android:layout_weight="1"
             android:orientation="horizontal">
 
             <FrameLayout
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/OppTrenchCount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="0dp"
+                    android:layout_marginTop="0dp"
+                    android:elevation="20dp"
+                    android:paddingHorizontal="18dp"
+                    android:paddingVertical="10dp"
+                    android:text="0"
+                    android:textColor="@android:color/white"
+                    android:textColorHint="@color/white"
+                    android:textSize="14dp"
+                    android:visibility="visible"
+                    tools:visibility="visible" />
 
                 <Button
                     android:id="@+id/opponentTrench"
@@ -190,22 +198,21 @@
                     android:minHeight="48dp"
                     android:text="@string/opponent_trench" />
 
-                <TextView
-                    android:id="@+id/OppTrenchCount"
-                    android:layout_width="46dp"
-                    android:layout_height="42dp"
-                    android:gravity="right"
-                    android:text="0"
-                    android:textColor="@android:color/white"
-                    android:textColorHint="@color/white"
-                    android:textSize="24sp"
-                    android:visibility="visible" />
-
             </FrameLayout>
 
             <FrameLayout
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/RendezvousCount"
+                    android:layout_width="36dp"
+                    android:layout_height="43dp"
+                    android:elevation="10dp"
+                    android:gravity="start"
+                    android:text="0"
+                    android:textColor="@android:color/white"
+                    android:textColorHint="@color/white" />
 
                 <Button
                     android:id="@+id/rendezvous"
@@ -213,21 +220,6 @@
                     android:layout_height="match_parent"
                     android:minHeight="48dp"
                     android:text="@string/rendezvous" />
-
-                <TextView
-                    android:id="@+id/RendezvousCount"
-                    android:layout_width="59dp"
-                    android:layout_height="44dp"
-                    android:text="0"
-                    android:textColor="@android:color/white"
-                    android:textColorHint="@color/white"
-                    android:textSize="14sp" />
-
-            </FrameLayout>
-
-            <FrameLayout
-                android:layout_width="5dp"
-                android:layout_height="match_parent">
 
             </FrameLayout>
 
@@ -237,8 +229,9 @@
 
                 <TextView
                     android:id="@+id/AllianceTrenchCount"
-                    android:layout_width="59dp"
-                    android:layout_height="44dp"
+                    android:layout_width="56dp"
+                    android:layout_height="40dp"
+                    android:elevation="10dp"
                     android:text="0"
                     android:textColor="@android:color/white"
                     android:textColorHint="@color/white"
@@ -248,6 +241,7 @@
                     android:id="@+id/alliance_trench"
                     android:layout_width="wrap_content"
                     android:layout_height="fill_parent"
+                    android:elevation="10dp"
                     android:minHeight="48dp"
                     android:text="@string/alliance_trench" />
 
@@ -272,22 +266,18 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:text="@string/auto_low_hit" />
+                    android:text="auto low hit"
+                    android:textAllCaps="true" />
 
                 <TextView
                     android:id="@+id/autoLowHitCount"
-                    android:layout_width="59dp"
-                    android:layout_height="44dp"
-                    android:text="@string/_0"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:elevation="10dp"
+                    android:text="0"
                     android:textColor="@android:color/white"
                     android:textColorHint="@color/white"
                     android:textSize="14sp" />
-            </FrameLayout>
-
-            <FrameLayout
-                android:layout_width="5dp"
-                android:layout_height="match_parent">
-
             </FrameLayout>
 
             <FrameLayout
@@ -299,13 +289,14 @@
                     android:id="@+id/AutoHighHit"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:text="@string/auto_high_hit" />
+                    android:text="auto high hit" />
 
                 <TextView
                     android:id="@+id/autoHighHitCount"
-                    android:layout_width="59dp"
-                    android:layout_height="44dp"
-                    android:text="@string/_0"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:elevation="10dp"
+                    android:text="0"
                     android:textColor="@android:color/white"
                     android:textColorHint="@color/white"
                     android:textSize="14sp" />
@@ -329,22 +320,17 @@
                     android:id="@+id/autoLowMiss"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:text="@string/auto_low_miss" />
+                    android:text="auto low miss" />
 
                 <TextView
                     android:id="@+id/autoLowMissCount"
-                    android:layout_width="59dp"
-                    android:layout_height="44dp"
-                    android:text="@string/_0"
+                    android:layout_width="38dp"
+                    android:layout_height="39dp"
+                    android:elevation="10dp"
+                    android:text="0"
                     android:textColor="@android:color/white"
                     android:textColorHint="@color/white"
                     android:textSize="14sp" />
-            </FrameLayout>
-
-            <FrameLayout
-                android:layout_width="5dp"
-                android:layout_height="match_parent">
-
             </FrameLayout>
 
             <FrameLayout
@@ -352,20 +338,25 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1">
 
+                <TextView
+                    android:id="@+id/autoHighMissCount"
+                    android:layout_width="29dp"
+                    android:layout_height="36dp"
+                    android:elevation="10dp"
+                    android:text="0"
+                    android:textAllCaps="false"
+                    android:textColor="@android:color/white"
+                    android:textColorHint="@color/white"
+                    android:textIsSelectable="false" />
+
                 <Button
                     android:id="@+id/autoHighMiss"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:text="@string/auto_high_miss" />
-
-                <TextView
-                    android:id="@+id/autoHighMissCount"
-                    android:layout_width="59dp"
-                    android:layout_height="44dp"
-                    android:text="@string/_0"
+                    android:text="auto high miss"
                     android:textColor="@android:color/white"
-                    android:textColorHint="@color/white"
-                    android:textSize="14sp" />
+                    android:textColorHint="@android:color/white" />
+
             </FrameLayout>
 
         </LinearLayout>
@@ -374,8 +365,9 @@
             android:id="@+id/FieldArea"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_gravity="center"
             android:gravity="center"
-            android:text="@string/field_area" />
+            android:text="FIELD AREA" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -388,10 +380,10 @@
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:background="@android:color/holo_red_dark"
-                android:text="@string/cross"
+                android:text="cross"
                 android:textColor="#B2EBF2"
-                android:textOff="@string/cross"
-                android:textOn="@string/cross" />
+                android:textOff="cross"
+                android:textOn="cross" />
 
             <ToggleButton
                 android:id="@+id/trenchBtn"
@@ -399,10 +391,10 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:background="@android:color/holo_red_dark"
-                android:text="@string/trench"
+                android:text="TRENCH"
                 android:textColor="#B2EBF2"
-                android:textOff="@string/trench"
-                android:textOn="@string/trench" />
+                android:textOff="TRENCH"
+                android:textOn="TRENCH" />
 
             <ToggleButton
                 android:id="@+id/midBtn"
@@ -410,10 +402,10 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:background="@android:color/holo_red_dark"
-                android:text="@string/mid"
+                android:text="MID"
                 android:textColor="#B2EBF2"
-                android:textOff="@string/mid"
-                android:textOn="@string/mid" />
+                android:textOff="MID"
+                android:textOn="MID" />
 
             <ToggleButton
                 android:id="@+id/targetBtn"
@@ -421,12 +413,23 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:background="@android:color/holo_red_dark"
-                android:text="@string/target"
+                android:text="TARGET"
                 android:textColor="#B2EBF2"
-                android:textOff="@string/target"
-                android:textOn="@string/target" />
+                android:textOff="TARGET"
+                android:textOn="TARGET" />
         </LinearLayout>
 
     </LinearLayout>
+
+    <ImageButton
+        android:id="@+id/undoButton"
+        android:layout_width="54dp"
+        android:layout_height="48dp"
+        app:layout_constraintBottom_toBottomOf="@+id/startMatchTimer"
+        app:layout_constraintEnd_toEndOf="@+id/startMatchTimer"
+        app:layout_constraintStart_toEndOf="@+id/pauseBtn"
+        app:layout_constraintTop_toTopOf="@+id/startMatchTimer"
+        app:srcCompat="@android:drawable/ic_menu_revert"
+        tools:ignore="SpeakableTextPresentCheck" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
