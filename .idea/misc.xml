@@ -3,6 +3,10 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/amdaj/StudioProjects/Android-Scouting-App-2020/app/src/main/res/layout/activity_comment.xml" value="0.12771739130434784" />
+        <entry key="..\:/Users/amdaj/StudioProjects/Android-Scouting-App-2020/app/src/main/res/layout/auto_screen.xml" value="0.25" />
+        <entry key="..\:/Users/amdaj/StudioProjects/Android-Scouting-App-2020/app/src/main/res/layout/endgame_screen.xml" value="0.16" />
+        <entry key="..\:/Users/amdaj/StudioProjects/Android-Scouting-App-2020/app/src/main/res/layout/teleop_screen.xml" value="0.25" />
         <entry key="..\:/Users/owner/AndroidStudioProjects/scoutingApp/app/src/main/res/layout/activity_main.xml" value="0.1796875" />
         <entry key="..\:/Users/owner/AndroidStudioProjects/scoutingApp/app/src/main/res/layout/auto_screen.xml" value="0.4466666666666667" />
         <entry key="..\:/Users/test/StudioProjects/Android-Scouting-App-2020/app/src/main/res/layout-sw600dp/auto_screen.xml" value="0.134765625" />

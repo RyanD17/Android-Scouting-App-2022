@@ -6,16 +6,15 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.os.CountDownTimer;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.ToggleButton;
 
 import java.util.Stack;
-import java.util.List;
 
 
 public class MainActivity<data> extends AppCompatActivity {
@@ -52,6 +51,8 @@ public class MainActivity<data> extends AppCompatActivity {
 
     public long timeLeftInMilliseconds = 165000;
 
+    float x1, x2, y1, y2;
+
     public int allianceTrenchCount = 0;
     public int rendezvousCount = 0;
     public int oppTrenchCount = 0;
@@ -80,11 +81,11 @@ public class MainActivity<data> extends AppCompatActivity {
         opponentTrenchCount = findViewById(R.id.OppTrenchCount);
         autoHighMissBtn = findViewById(R.id.autoHighMiss);
         autoHighMissBtnCount = findViewById(R.id.autoHighMissCount);
-        autoHighHitBtn = findViewById(R.id.AutoHighHit);
+        autoHighHitBtn = findViewById(R.id.autoHighHit);
         autoHighHitBtnCount = findViewById(R.id.autoHighHitCount);
         autoLowMissBtn = findViewById(R.id.autoLowMiss);
         autoLowMissTxt = findViewById(R.id.autoLowMissCount);
-        autoLowHitBtn = findViewById(R.id.AutoLowHit);
+        autoLowHitBtn = findViewById(R.id.autoLowHit);
         autoLowHitTxt = findViewById(R.id.autoLowHitCount);
         crossBtn = findViewById(R.id.crossBtn);
         trenchBtn = findViewById(R.id.trenchBtn);
@@ -120,8 +121,6 @@ public class MainActivity<data> extends AppCompatActivity {
                 pauseTimer();
             }
         });
-
-
         commentBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -294,6 +293,23 @@ public class MainActivity<data> extends AppCompatActivity {
                 }
             }
         });
+    }
+    public boolean onTouchEvent(MotionEvent touchEvent){
+        switch (touchEvent.getAction()){
+            case MotionEvent.ACTION_DOWN:
+                x1 = touchEvent.getX();
+                y1 = touchEvent.getY();
+                break;
+            case MotionEvent.ACTION_UP:
+                x2 = touchEvent.getX();
+                y2 = touchEvent.getY();
+                if (x1 < x2){
+                    Intent intent = new Intent(MainActivity.this, teleop.class);
+                    startActivity(intent);
+                }
+                break;
+        }
+        return false;
     }
 
     public void openCommentActivity() {
