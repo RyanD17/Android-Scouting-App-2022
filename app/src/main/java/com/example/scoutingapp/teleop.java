@@ -131,7 +131,7 @@ public class teleop extends MainActivity {
         });
 
 
-        //code for making the rendezvous button work
+        //code for making the rendezvousObj button work
         defending.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 isClicked = true;
