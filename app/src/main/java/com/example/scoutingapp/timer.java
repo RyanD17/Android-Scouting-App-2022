@@ -1,56 +1,37 @@
 package com.example.scoutingapp;
 
-import androidx.appcompat.app.AppCompatActivity;
-
-import android.content.Intent;
-import android.graphics.Color;
 import android.os.Bundle;
 import android.os.CountDownTimer;
-import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ProgressBar;
 import android.widget.TextView;
-import android.widget.ToggleButton;
 
-import java.util.Stack;
+import com.example.scoutingapp.autoscreen.MainActivity;
 
-
-public class MainActivity<data> extends AppCompatActivity {
-
+public class timer extends MainActivity {
     ProgressBar matchTimer;
     TextView timer_txt;
     Button startTimer;
     ImageButton pauseTimer;
-    ImageButton undoButton;
-    ImageButton commentBtn;
 
-    public boolean isClicked = false;
+
     public boolean isTimerRunning = false;
 
     public long timeLeftInMilliseconds = 165000;
-
-    float x1, x2, y1, y2;
-
     CountDownTimer countDownTimer;
-
-    CommentActivity commentActivity = new CommentActivity();
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.auto_screen);
 
-        //initializing variables
-
         matchTimer = findViewById(R.id.matchTimer);
         timer_txt = findViewById(R.id.timerTxt);
         startTimer = findViewById(R.id.startMatchTimer);
         pauseTimer = findViewById(R.id.pauseBtn);
-        commentBtn = findViewById(R.id.commentBtn);
-        undoButton = findViewById(R.id.undoButton);
+
 
         //code for the Timer
         matchTimer.setMax(165);
@@ -72,36 +53,8 @@ public class MainActivity<data> extends AppCompatActivity {
                 pauseTimer();
             }
         });
-        commentBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                openCommentActivity();
-            }
-        });
-    }
-    public boolean onTouchEvent(MotionEvent touchEvent){
-        switch (touchEvent.getAction()){
-            case MotionEvent.ACTION_DOWN:
-                x1 = touchEvent.getX();
-                y1 = touchEvent.getY();
-                break;
-            case MotionEvent.ACTION_UP:
-                x2 = touchEvent.getX();
-                y2 = touchEvent.getY();
-                if (x1 < x2){
-                    Intent intent = new Intent(MainActivity.this, teleop.class);
-                    startActivity(intent);
-                }
-                break;
-        }
-        return false;
     }
 
-    public void openCommentActivity() {
-        Intent intent = new Intent(this, com.example.scoutingapp.CommentActivity.class);
-        startActivity(intent);
-
-    }
     private void startTimer() {
         countDownTimer = new CountDownTimer(timeLeftInMilliseconds, 1000) {
             @Override

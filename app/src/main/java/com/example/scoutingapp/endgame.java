@@ -1,4 +1,6 @@
 package com.example.scoutingapp;
 
-public class endgame extends MainActivity{
+import com.example.scoutingapp.autoscreen.MainActivity;
+
+public class endgame extends MainActivity {
 }

@@ -1,4 +1,6 @@
 package com.example.scoutingapp;
 
-public class settings  extends MainActivity{
+import com.example.scoutingapp.autoscreen.MainActivity;
+
+public class settings  extends MainActivity {
 }

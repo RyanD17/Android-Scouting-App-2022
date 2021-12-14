@@ -1,11 +1,14 @@
-package com.example.scoutingapp;
+package com.example.scoutingapp.autoscreen;
 
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ToggleButton;
 
+import com.example.scoutingapp.R;
+
 public class fieldAreaButtons extends MainActivity {
+
     ToggleButton crossBtn;
     ToggleButton trenchBtn;
     ToggleButton midBtn;

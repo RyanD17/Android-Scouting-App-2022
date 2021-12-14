@@ -1,9 +1,11 @@
-package com.example.scoutingapp;
+package com.example.scoutingapp.autoscreen;
 
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+
+import com.example.scoutingapp.R;
 
 import java.util.Stack;
 
@@ -12,8 +14,6 @@ public class allianceTrench extends MainActivity {
     TextView allianceTrenchBtnCount;
 
     public int allianceTrenchCount = 0;
-
-
     public allianceTrench allianceTrenchObj = new allianceTrench();
 
     @Override
@@ -28,8 +28,8 @@ public class allianceTrench extends MainActivity {
         //code for making the alliance trench button work
         allianceTrenchBtn.setOnClickListener(new View.OnClickListener() { //I call the onClickListener function
             public void onClick(View v) {//if the alliance trench button is clicked, then this executes
-                allianceTrenchObj.isClicked = true;
-                allianceTrenchObj.allianceTrenchBtnCount.setText(Integer.toString(allianceTrenchCount++));
+                isClicked = true;
+                allianceTrenchBtnCount.setText(Integer.toString(allianceTrenchCount++));
                 undoButton.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {

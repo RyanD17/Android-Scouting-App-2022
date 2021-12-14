@@ -1,9 +1,11 @@
-package com.example.scoutingapp;
+package com.example.scoutingapp.autoscreen;
 
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+
+import com.example.scoutingapp.R;
 
 import java.util.Stack;
 
@@ -28,8 +30,8 @@ public class opponentTrench extends MainActivity {
         //code for making the alliance trench button work
         opponentTrenchBtn.setOnClickListener(new View.OnClickListener() { //I call the onClickListener function
             public void onClick(View v) {//if the alliance trench button is clicked, then this executes
-                opponentTrenchObj.isClicked = true;
-                opponentTrenchObj.opponentTrenchCount.setText(Integer.toString(oppTrenchCount++));
+                isClicked = true;
+                opponentTrenchCount.setText(Integer.toString(oppTrenchCount++));
                 undoButton.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {

@@ -1,4 +1,6 @@
 package com.example.scoutingapp;
 
-public class qr_code extends MainActivity{
+import com.example.scoutingapp.autoscreen.MainActivity;
+
+public class qr_code extends MainActivity {
 }

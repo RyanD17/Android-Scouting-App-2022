@@ -1,4 +1,6 @@
 package com.example.scoutingapp;
 
-public class match_selector extends MainActivity{
+import com.example.scoutingapp.autoscreen.MainActivity;
+
+public class match_selector extends MainActivity {
 }

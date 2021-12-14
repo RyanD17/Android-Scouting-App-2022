@@ -1,12 +1,14 @@
 package com.example.scoutingapp;
 
-import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.TextView;
+
+import com.example.scoutingapp.autoscreen.MainActivity;
+
 import java.util.ArrayList;
 
 public class CommentActivity extends MainActivity {
@@ -93,6 +95,7 @@ public class CommentActivity extends MainActivity {
         ok_Btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 finishAndRemoveTask();
             }
         });
