@@ -9,6 +9,8 @@ import com.example.scoutingapp.R;
 public class defending extends teleop {
     ToggleButton defending;
 
+    public boolean defending_is_clicked = false;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -19,7 +21,7 @@ public class defending extends teleop {
         //code for making the rendezvousObj button work
         defending.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                isClicked = true;
+                defending_is_clicked = true;
                 undoButton.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {

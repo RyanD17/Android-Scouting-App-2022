@@ -7,7 +7,10 @@ import android.widget.ToggleButton;
 import com.example.scoutingapp.R;
 
 public class resisting extends teleop{
+
     ToggleButton resisting;
+
+    public boolean resisting_is_clicked =false;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -18,7 +21,7 @@ public class resisting extends teleop{
         //code for making the resisting trench button work
         resisting.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                isClicked = true;
+                resisting_is_clicked = true;
                 undoButton.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {

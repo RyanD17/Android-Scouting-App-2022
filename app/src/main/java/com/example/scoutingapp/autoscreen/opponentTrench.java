@@ -14,9 +14,7 @@ public class opponentTrench extends MainActivity {
     TextView opponentTrenchCount;
 
     public int oppTrenchCount = 0;
-
-
-    public opponentTrench opponentTrenchObj = new opponentTrench();
+    public boolean oppTrenchIsClicked = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,12 +23,12 @@ public class opponentTrench extends MainActivity {
 
         opponentTrenchBtn = findViewById(R.id.opponentTrench);
         opponentTrenchCount = findViewById(R.id.OppTrenchCount);
-
-
-        //code for making the alliance trench button work
+    }
+    public void oppTrench_IsPressed (){
+        //code for making the opponent trench button work
         opponentTrenchBtn.setOnClickListener(new View.OnClickListener() { //I call the onClickListener function
             public void onClick(View v) {//if the alliance trench button is clicked, then this executes
-                isClicked = true;
+                oppTrenchIsClicked = true;
                 opponentTrenchCount.setText(Integer.toString(oppTrenchCount++));
                 undoButton.setOnClickListener(new View.OnClickListener() {
                     @Override

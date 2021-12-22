@@ -26,7 +26,8 @@ public class CommentActivity extends MainActivity {
     public boolean entry_isPressed = false;
     public boolean robot_incapacitated_isPressed = false;
 
-    ArrayList <String> otherComments_txt = new ArrayList<String>();
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,23 +45,13 @@ public class CommentActivity extends MainActivity {
         robot_disabled.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (robot_disabled_isPressed){
-                    robot_disabled_isPressed = true;
-                }
-                else{
-                    robot_disabled_isPressed = false;
-                }
+                robot_disabled_isPressed = robot_disabled_isPressed;
             }
         });
         robot_incapacitated.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (robot_incapacitated_isPressed){
-                    robot_incapacitated_isPressed = true;
-                }
-                else{
-                    robot_incapacitated_isPressed = false;
-                }
+                robot_incapacitated_isPressed = robot_incapacitated_isPressed;
             }
         });
 
@@ -95,7 +86,6 @@ public class CommentActivity extends MainActivity {
         ok_Btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
                 finishAndRemoveTask();
             }
         });

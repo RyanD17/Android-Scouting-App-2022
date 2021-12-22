@@ -10,11 +10,11 @@ import com.example.scoutingapp.R;
 import java.util.Stack;
 
 public class allianceTrench extends MainActivity {
-    Button allianceTrenchBtn;
-    TextView allianceTrenchBtnCount;
+    public Button allianceTrenchBtn;
+    public TextView allianceTrenchBtnCount;
 
     public int allianceTrenchCount = 0;
-    public allianceTrench allianceTrenchObj = new allianceTrench();
+    public boolean allianceTrench_isClicked = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,22 +23,22 @@ public class allianceTrench extends MainActivity {
 
         allianceTrenchBtn = findViewById(R.id.alliance_trench);
         allianceTrenchBtnCount = findViewById(R.id.AllianceTrenchCount);
-
-
-        //code for making the alliance trench button work
-        allianceTrenchBtn.setOnClickListener(new View.OnClickListener() { //I call the onClickListener function
-            public void onClick(View v) {//if the alliance trench button is clicked, then this executes
-                isClicked = true;
-                allianceTrenchBtnCount.setText(Integer.toString(allianceTrenchCount++));
-                undoButton.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        allianceTrenchUndoOperation();
-                    }
-                });
-            }
-        });
     }
+        public void allianceTrenchIsPressed(){
+            //code for making the alliance trench button work
+            allianceTrenchBtn.setOnClickListener(new View.OnClickListener() { //I call the onClickListener function
+                public void onClick(View v) {//if the alliance trench button is clicked, then this executes
+                    allianceTrench_isClicked = true;
+                    allianceTrenchBtnCount.setText(Integer.toString(allianceTrenchCount++));
+                    undoButton.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            allianceTrenchUndoOperation();
+                        }
+                    });
+                }
+            });
+        }
     public void allianceTrenchUndoOperation() {
         Stack<Integer> stk = new Stack<>();
         stk.push(allianceTrenchCount);

@@ -5,25 +5,28 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MotionEvent;
-import android.view.View;
 import android.widget.ImageButton;
 
 import com.example.scoutingapp.CommentActivity;
 import com.example.scoutingapp.R;
+import com.example.scoutingapp.fieldArea;
 import com.example.scoutingapp.teleop_screen.teleop;
 
 
 public class MainActivity<data> extends AppCompatActivity {
 
-    ImageButton commentBtn;
+    public ImageButton commentBtn;
     public ImageButton undoButton;
 
+    public allianceTrench allianceTrenchObj = new allianceTrench();
+    public fieldArea fieldAreaButtonsObj = new fieldArea();
+    public opponentTrench opponentTrenchObj = new opponentTrench();
+    public CommentActivity commentActivityObj = new CommentActivity();
+    public rendezvous rendezvousObj = new rendezvous();
+    public robotHitMiss robotHitMissObj = new robotHitMiss();
 
-    public boolean isClicked = false;
 
     float x1, x2, y1, y2;
-
-    CommentActivity commentActivity = new CommentActivity();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,14 +35,29 @@ public class MainActivity<data> extends AppCompatActivity {
 
         //initializing variables
         undoButton = findViewById(R.id.undoButton);
-        commentBtn = findViewById(R.id.commentBtn);
 
-        commentBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                openCommentActivity();
-            }
-        });
+        if (allianceTrenchObj.allianceTrench_isClicked){
+            allianceTrenchObj.allianceTrenchIsPressed();
+        }
+        else{
+            allianceTrenchObj.allianceTrench_isClicked = false;
+        }
+
+        if (robotHitMissObj.autoHighHit_isClicked){
+            robotHitMissObj.autoHighHit_isPressed();
+            robotHitMissObj.autoHighHit_isClicked = true;
+        }
+        else{
+            robotHitMissObj.autoHighHit_isClicked = false;
+        }
+
+        if (robotHitMissObj.autoLowHit_isClicked){
+            robotHitMissObj.autoHighMiss_isPressed();
+            robotHitMissObj.autoHighHit_isClicked = true;
+        }
+        else{
+            robotHitMissObj.autoHighHit_isClicked = false;
+        }
     }
     public boolean onTouchEvent(MotionEvent touchEvent){
         switch (touchEvent.getAction()){
@@ -58,7 +76,6 @@ public class MainActivity<data> extends AppCompatActivity {
         }
         return false;
     }
-
     public void openCommentActivity() {
         Intent intent = new Intent(this, com.example.scoutingapp.CommentActivity.class);
         startActivity(intent);

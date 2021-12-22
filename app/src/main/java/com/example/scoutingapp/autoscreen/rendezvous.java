@@ -14,8 +14,7 @@ public class rendezvous extends MainActivity {
     TextView rendezvousBtnCount;
     public int rendezvousCount = 0;
 
-    public rendezvous rendezvousObj = new rendezvous();
-
+    public boolean rendezvousIsClicked = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,12 +23,12 @@ public class rendezvous extends MainActivity {
 
         rendezvousBtn = findViewById(R.id.rendezvous);
         rendezvousBtnCount = findViewById(R.id.RendezvousCount);
-
-
+    }
+    public void rendezvousIsPressed (){
         //code for making the alliance trench button work
         rendezvousBtn.setOnClickListener(new View.OnClickListener() { //I call the onClickListener function
             public void onClick(View v) {//if the alliance trench button is clicked, then this executes
-                isClicked = true;
+                rendezvousIsClicked = true;
                 rendezvousBtnCount.setText(Integer.toString(rendezvousCount++));
                 undoButton.setOnClickListener(new View.OnClickListener() {
                     @Override

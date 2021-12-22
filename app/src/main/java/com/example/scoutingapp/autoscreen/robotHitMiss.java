@@ -40,8 +40,15 @@ public class robotHitMiss extends MainActivity {
     public int LowMissCount = 0;
     public int LowHitCount = 0;
 
+    public boolean autoHighHit_isClicked = false;
+    public boolean autoHighMiss_isClicked = false;
+    public boolean autoLowHit_isClicked = false;
+    public boolean autoLowMiss_isClicked = false;
 
-    public robotHitMiss robotHitMissObj = new robotHitMiss();
+    public boolean HighHit_isClicked = false;
+    public boolean LowHit_isClicked = false;
+    public boolean HighMiss_isClicked = false;
+    public boolean LowMiss_isClicked = false;
 
     @SuppressLint("CutPasteId")
     @Override
@@ -66,70 +73,13 @@ public class robotHitMiss extends MainActivity {
         LowMissTxt = findViewById(R.id.autoLowMissCount);
         LowHitBtn = findViewById(R.id.autoLowHit);
         LowHitTxt = findViewById(R.id.autoLowHitCount);
+    }
 
-        //code for making the  high hit button work
-        HighHitBtn.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                isClicked = true;
-                HighHitBtnCount.setText(Integer.toString(HighHitCount++));
-                undoButton.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        HighHitUndoOperation();
-                    }
-                });
-            }
-        });
-
-        //code for making the  low hit button work
-        LowHitBtn.setOnClickListener(new View.OnClickListener() {
-            @SuppressLint("SetTextI18n")
-            public void onClick(View v) {
-                isClicked = true;
-                LowHitTxt.setText(Integer.toString(LowHitCount++));
-
-                undoButton.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        LowHitUndoOperation();
-                    }
-                });
-            }
-        });
-
-        //code for making the  high miss button work
-        HighMissBtn.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                isClicked = true;
-                HighMissBtnCount.setText(Integer.toString(HighMissCount++));
-                undoButton.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        HighMissUndoOperation();
-                    }
-                });
-            }
-        });
-
-        //code for making the  low miss button work
-        LowMissBtn.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                isClicked = true;
-                LowMissTxt.setText(Integer.toString(LowMissCount++));
-
-                undoButton.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        LowMissUndoOperation();
-                    }
-                });
-            }
-        });
-
+    public void autoHighHit_isPressed (){
         //code for making the auto high hit button work
         autoHighHitBtn.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                isClicked = true;
+                autoHighHit_isClicked = true;
                 autoHighHitBtnCount.setText(Integer.toString(autoHighHitCount++));
                 undoButton.setOnClickListener(new View.OnClickListener() {
                     @Override
@@ -139,11 +89,13 @@ public class robotHitMiss extends MainActivity {
                 });
             }
         });
+    }
 
+    public void autoLowHit_isPressed (){
         //code for making the auto low hit button work
         autoLowHitBtn.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                isClicked = true;
+                autoLowHit_isClicked = true;
                 autoLowHitTxt.setText(Integer.toString(autoLowHitCount++));
 
                 undoButton.setOnClickListener(new View.OnClickListener() {
@@ -154,13 +106,14 @@ public class robotHitMiss extends MainActivity {
                 });
             }
         });
+    }
 
+    public void autoHighMiss_isPressed (){
         //code for making the auto high miss button work
         autoHighMissBtn.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                isClicked = true;
+                HighMiss_isClicked = true;
                 autoHighMissBtnCount.setText(Integer.toString(autoHighMissCount++));
-
                 undoButton.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
@@ -169,17 +122,84 @@ public class robotHitMiss extends MainActivity {
                 });
             }
         });
+    }
 
+    public void autoLowMiss_isPressed(){
         //code for making the auto low miss button work
         autoLowMissBtn.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                isClicked = true;
+                autoLowMiss_isClicked = true;
                 autoLowMissTxt.setText(Integer.toString(autoLowMissCount++));
 
                 undoButton.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
                         autoLowMissUndoOperation();
+                    }
+                });
+            }
+        });
+    }
+    public void HighHit_isPressed(){
+        //code for making the  high hit button work
+        HighHitBtn.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                HighHit_isClicked = true;
+                HighHitBtnCount.setText(Integer.toString(HighHitCount++));
+                undoButton.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        HighHitUndoOperation();
+                    }
+                });
+            }
+        });
+    }
+
+    public void LowHit_isPressed(){
+        //code for making the  low hit button work
+        LowHitBtn.setOnClickListener(new View.OnClickListener() {
+            @SuppressLint("SetTextI18n")
+            public void onClick(View v) {
+                LowHit_isClicked = true;
+                LowHitTxt.setText(Integer.toString(LowHitCount++));
+                undoButton.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        LowHitUndoOperation();
+                    }
+                });
+            }
+        });
+    }
+
+    public void HighMiss_isPressed(){
+        //code for making the  high miss button work
+        HighMissBtn.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                HighMiss_isClicked = true;
+                HighMissBtnCount.setText(Integer.toString(HighMissCount++));
+                undoButton.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        HighMissUndoOperation();
+                    }
+                });
+            }
+        });
+    }
+
+    public void LowMiss_isPressed(){
+        //code for making the  low miss button work
+        LowMissBtn.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                LowMiss_isClicked = true;
+                LowMissTxt.setText(Integer.toString(LowMissCount++));
+
+                undoButton.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        LowMissUndoOperation();
                     }
                 });
             }

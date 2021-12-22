@@ -11,6 +11,7 @@ import android.widget.TextView;
 import com.example.scoutingapp.autoscreen.MainActivity;
 
 public class timer extends MainActivity {
+
     ProgressBar matchTimer;
     TextView timer_txt;
     Button startTimer;
@@ -21,6 +22,13 @@ public class timer extends MainActivity {
 
     public long timeLeftInMilliseconds = 165000;
     CountDownTimer countDownTimer;
+
+    public int timeLeft = (int) (timeLeftInMilliseconds) / 1000;
+
+    public int progressTime = 165 - timeLeft ;
+
+    public String TimeToString = Integer.toString(progressTime);
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,7 +63,7 @@ public class timer extends MainActivity {
         });
     }
 
-    private void startTimer() {
+    public void startTimer() {
         countDownTimer = new CountDownTimer(timeLeftInMilliseconds, 1000) {
             @Override
             public void onTick(long millisUntilFinished) {
@@ -78,7 +86,7 @@ public class timer extends MainActivity {
         pauseTimer.setVisibility(View.VISIBLE);
         undoButton.setVisibility(View.VISIBLE);
     }
-    private void pauseTimer() {
+    public void pauseTimer() {
         countDownTimer.cancel();
         isTimerRunning = false;
         startTimer.setVisibility(View.VISIBLE);
@@ -87,14 +95,7 @@ public class timer extends MainActivity {
         updateCountDownText();
     }
 
-    private void updateCountDownText() {
-
-        int timeLeft = (int) (timeLeftInMilliseconds) / 1000;
-
-        int progressTime = 165- timeLeft ;
-
-        String TimeToString = Integer.toString(progressTime);
-
+   public void updateCountDownText() {
         matchTimer.setProgress(progressTime);
         timer_txt.setText(TimeToString);
     }

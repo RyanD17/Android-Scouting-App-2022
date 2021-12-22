@@ -1,4 +1,4 @@
-package com.example.scoutingapp;
+package com.example.scoutingapp.endgame;
 
 import com.example.scoutingapp.autoscreen.MainActivity;
 
