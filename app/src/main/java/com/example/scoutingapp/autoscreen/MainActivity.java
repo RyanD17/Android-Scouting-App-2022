@@ -12,6 +12,8 @@ import com.example.scoutingapp.R;
 import com.example.scoutingapp.fieldArea;
 import com.example.scoutingapp.teleop_screen.teleop;
 
+import java.util.ArrayList;
+
 
 public class MainActivity<data> extends AppCompatActivity {
 
@@ -46,6 +48,7 @@ public class MainActivity<data> extends AppCompatActivity {
         if (robotHitMissObj.autoHighHit_isClicked){
             robotHitMissObj.autoHighHit_isPressed();
             robotHitMissObj.autoHighHit_isClicked = true;
+
         }
         else{
             robotHitMissObj.autoHighHit_isClicked = false;

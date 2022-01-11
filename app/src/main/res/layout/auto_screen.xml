@@ -10,10 +10,10 @@
         android:id="@+id/timerPng"
         android:layout_width="41dp"
         android:layout_height="17dp"
-        android:layout_marginBottom="40dp"
+        android:layout_marginBottom="36dp"
         app:layout_constraintBottom_toTopOf="@+id/matchTimer"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.748"
+        app:layout_constraintHorizontal_bias="0.827"
         app:layout_constraintStart_toStartOf="parent"
         app:srcCompat="@android:drawable/ic_lock_idle_alarm" />
 
@@ -21,8 +21,8 @@
         android:id="@+id/teamPNG"
         android:layout_width="41dp"
         android:layout_height="17dp"
-        android:layout_marginEnd="84dp"
-        android:layout_marginBottom="40dp"
+        android:layout_marginEnd="68dp"
+        android:layout_marginBottom="36dp"
         app:layout_constraintBottom_toTopOf="@+id/matchTimer"
         app:layout_constraintEnd_toStartOf="@+id/timerPng"
         app:srcCompat="@drawable/simple_two_business_people_handshake_line_icon_symbol_sign_vector_illustration_design_isolated_white_background_element_110609180" />
@@ -79,10 +79,10 @@
         android:text="TextView"
         app:layout_constraintBottom_toTopOf="@+id/matchTimer"
         app:layout_constraintEnd_toStartOf="@+id/timerPng"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.576"
         app:layout_constraintStart_toEndOf="@+id/teamPNG"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.35" />
+        app:layout_constraintVertical_bias="0.368" />
 
     <TextView
         android:id="@+id/timerTxt"
@@ -91,10 +91,10 @@
         android:text="TextView"
         app:layout_constraintBottom_toTopOf="@+id/matchTimer"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.371"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toEndOf="@+id/timerPng"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.35" />
+        app:layout_constraintVertical_bias="0.298" />
 
     <TextView
         android:id="@+id/auto_txt"
@@ -158,97 +158,10 @@
         android:layout_width="match_parent"
         android:layout_height="450dp"
         android:orientation="vertical"
-        android:weightSum="4"
+        android:weightSum="3"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent">
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="0dp"
-            android:layout_marginTop="0dp"
-            android:layout_weight="1"
-            android:orientation="horizontal">
-
-            <FrameLayout
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent">
-
-                <TextView
-                    android:id="@+id/OppTrenchCount"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="0dp"
-                    android:layout_marginTop="0dp"
-                    android:elevation="20dp"
-                    android:paddingHorizontal="18dp"
-                    android:paddingVertical="10dp"
-                    android:text="0"
-                    android:textColor="@android:color/white"
-                    android:textColorHint="@color/white"
-                    android:textSize="14dp"
-                    android:visibility="visible"
-                    tools:visibility="visible" />
-
-                <Button
-                    android:id="@+id/opponentTrench"
-                    android:layout_width="121dp"
-                    android:layout_height="match_parent"
-                    android:minHeight="48dp"
-                    android:text="@string/opponent_trench" />
-
-            </FrameLayout>
-
-            <FrameLayout
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent">
-
-                <TextView
-                    android:id="@+id/RendezvousCount"
-                    android:layout_width="36dp"
-                    android:layout_height="43dp"
-                    android:elevation="10dp"
-                    android:gravity="center"
-                    android:text="0"
-                    android:textColor="@android:color/white"
-                    android:textColorHint="@color/white" />
-
-                <Button
-                    android:id="@+id/rendezvous"
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:minHeight="48dp"
-                    android:text="@string/rendezvous" />
-
-            </FrameLayout>
-
-            <FrameLayout
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent">
-
-                <TextView
-                    android:id="@+id/AllianceTrenchCount"
-                    android:layout_width="68dp"
-                    android:layout_height="39dp"
-                    android:elevation="10dp"
-                    android:gravity="center"
-                    android:text="0"
-                    android:textColor="@android:color/white"
-                    android:textColorHint="@color/white"
-                    android:textSize="14sp" />
-
-                <Button
-                    android:id="@+id/alliance_trench"
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:elevation="10dp"
-                    android:minHeight="48dp"
-                    android:text="@string/alliance_trench" />
-
-            </FrameLayout>
-
-        </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -366,62 +279,55 @@
 
         </LinearLayout>
 
-        <TextView
-            android:id="@+id/Climb_txt"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:gravity="center"
-            android:text="FIELD AREA" />
-
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:orientation="horizontal">
 
-            <ToggleButton
-                android:id="@+id/crossBtn"
-                android:layout_width="wrap_content"
+            <FrameLayout
+                android:layout_width="165dp"
                 android:layout_height="match_parent"
-                android:background="@android:color/holo_red_dark"
-                android:text="cross"
-                android:textColor="#B2EBF2"
-                android:textOff="cross"
-                android:textOn="cross" />
+                android:layout_weight="1">
 
-            <ToggleButton
-                android:id="@+id/trenchBtn"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:background="@android:color/holo_red_dark"
-                android:text="TRENCH"
-                android:textColor="#B2EBF2"
-                android:textOff="TRENCH"
-                android:textOn="TRENCH" />
+                <Button
+                    android:id="@+id/HPMiss"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="Human Player Miss" />
 
-            <ToggleButton
-                android:id="@+id/midBtn"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:background="@android:color/holo_red_dark"
-                android:text="MID"
-                android:textColor="#B2EBF2"
-                android:textOff="MID"
-                android:textOn="MID" />
+                <TextView
+                    android:id="@+id/HPMissCount"
+                    android:layout_width="29dp"
+                    android:layout_height="36dp"
+                    android:elevation="10dp"
+                    android:gravity="center"
+                    android:text="0"
+                    android:textColor="@android:color/white" />
 
-            <ToggleButton
-                android:id="@+id/targetBtn"
+            </FrameLayout>
+
+            <FrameLayout
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:background="@android:color/holo_red_dark"
-                android:text="TARGET"
-                android:textColor="#B2EBF2"
-                android:textOff="TARGET"
-                android:textOn="TARGET" />
+                android:layout_weight="1">
+
+                <TextView
+                    android:id="@+id/HPHitCount"
+                    android:layout_width="28dp"
+                    android:layout_height="36dp"
+                    android:elevation="10dp"
+                    android:gravity="center"
+                    android:text="0"
+                    android:textColor="@android:color/white" />
+
+                <Button
+                    android:id="@+id/HPHit"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="human Player hit" />
+            </FrameLayout>
+
         </LinearLayout>
 
     </LinearLayout>

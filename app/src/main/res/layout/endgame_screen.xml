@@ -237,128 +237,48 @@
             android:orientation="horizontal">
 
             <ToggleButton
-                android:id="@+id/climb_none5"
+                android:id="@+id/climb_low"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:background="@android:color/holo_red_dark"
-                android:text="none"
+                android:text="Low Rung"
                 android:textColor="#B2EBF2"
-                android:textOff="none"
-                android:textOn="none" />
+                android:textOff="Low Rung"
+                android:textOn="Low Rung" />
 
             <ToggleButton
-                android:id="@+id/climb_attempt5"
+                android:id="@+id/climb_mid"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:background="@android:color/holo_red_dark"
-                android:text="attempt"
+                android:text="Mid Rung"
                 android:textColor="#B2EBF2"
-                android:textOff="attempt"
-                android:textOn="attempt" />
+                android:textOff="Mid Rung"
+                android:textOn="Mid Rung" />
 
             <ToggleButton
-                android:id="@+id/climb_success5"
+                android:id="@+id/climb_high"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:background="@android:color/holo_red_dark"
-                android:text="success"
+                android:text="high rung"
                 android:textColor="#B2EBF2"
-                android:textOff="success"
-                android:textOn="success" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:orientation="horizontal">
-
-            <CheckBox
-                android:id="@+id/baclanced_cb"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="Balanced" />
-
-            <CheckBox
-                android:id="@+id/active_balance_cb"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="active balanced" />
-
-        </LinearLayout>
-
-        <TextView
-            android:id="@+id/driverSkillRating"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:gravity="center"
-            android:text="Driver skill rating" />
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="117dp"
-            android:orientation="horizontal">
+                android:textOff="high rung"
+                android:textOn="high rung" />
 
             <ToggleButton
-                android:id="@+id/one"
+                android:id="@+id/climb_traversal"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:background="@android:color/holo_red_dark"
-                android:text="1"
+                android:text="traversal rung"
                 android:textColor="#B2EBF2"
-                android:textOff="1"
-                android:textOn="1" />
-
-            <ToggleButton
-                android:id="@+id/two"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:background="@android:color/holo_red_dark"
-                android:text="@string/_2"
-                android:textColor="#B2EBF2"
-                android:textOff="2"
-                android:textOn="2" />
-
-            <ToggleButton
-                android:id="@+id/three"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:background="@android:color/holo_red_dark"
-                android:text="3"
-                android:textColor="#B2EBF2"
-                android:textOff="3"
-                android:textOn="3" />
-
-            <ToggleButton
-                android:id="@+id/four"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:background="@android:color/holo_red_dark"
-                android:text="4"
-                android:textColor="#B2EBF2"
-                android:textOff="4"
-                android:textOn="4" />
-
-            <ToggleButton
-                android:id="@+id/five"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:background="@android:color/holo_red_dark"
-                android:text="5"
-                android:textColor="#B2EBF2"
-                android:textOff="5"
-                android:textOn="5" />
+                android:textOff="traversal rung"
+                android:textOn="traversal rung" />
         </LinearLayout>
 
     </LinearLayout>

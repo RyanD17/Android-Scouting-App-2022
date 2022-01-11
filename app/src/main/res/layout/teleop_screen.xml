@@ -335,7 +335,7 @@
             android:orientation="horizontal">
 
             <ToggleButton
-                android:id="@+id/crossBtn"
+                android:id="@+id/launchPadBtn"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:background="@android:color/holo_red_dark"
@@ -345,7 +345,7 @@
                 android:textOn="cross" />
 
             <ToggleButton
-                android:id="@+id/trenchBtn"
+                android:id="@+id/tarmacBtn"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_weight="1"

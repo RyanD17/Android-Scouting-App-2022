@@ -3,12 +3,16 @@
     package="com.example.scoutingapp">
 
     <application
-        android:allowBackup="true"
+        android:allowBackup=""
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.ScoutingApp">
+        android:theme="@style/Theme.ScoutingApp"
+        android:fullBackupContent="">
+        <activity
+            android:name=".qr_code"
+            android:exported="false" />
         <activity
             android:name=".CommentActivity"
             android:exported="false" />

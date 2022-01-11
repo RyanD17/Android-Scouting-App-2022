@@ -7,11 +7,15 @@ import android.widget.TextView;
 
 import com.example.scoutingapp.R;
 
+import java.util.ArrayList;
 import java.util.Stack;
 
 public class allianceTrench extends MainActivity {
     public Button allianceTrenchBtn;
     public TextView allianceTrenchBtnCount;
+
+    public ArrayList<Integer> allianceTrenchData = new ArrayList<Integer>();
+
 
     public int allianceTrenchCount = 0;
     public boolean allianceTrench_isClicked = false;
@@ -30,6 +34,7 @@ public class allianceTrench extends MainActivity {
                 public void onClick(View v) {//if the alliance trench button is clicked, then this executes
                     allianceTrench_isClicked = true;
                     allianceTrenchBtnCount.setText(Integer.toString(allianceTrenchCount++));
+                    allianceTrenchData.add(allianceTrenchCount);
                     undoButton.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View v) {
@@ -44,6 +49,7 @@ public class allianceTrench extends MainActivity {
         stk.push(allianceTrenchCount);
         while (stk.firstElement() == allianceTrenchCount) {
             allianceTrenchBtnCount.setText(Integer.toString(allianceTrenchCount -= 1));
+            allianceTrenchData.remove(allianceTrenchCount -= 1);
         }
         stk.pop();
     }

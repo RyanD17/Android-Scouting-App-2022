@@ -7,11 +7,14 @@ import android.widget.TextView;
 
 import com.example.scoutingapp.R;
 
+import java.util.ArrayList;
 import java.util.Stack;
 
 public class opponentTrench extends MainActivity {
     Button opponentTrenchBtn;
     TextView opponentTrenchCount;
+
+    public ArrayList<Integer> opponentTrenchData = new ArrayList<Integer>();
 
     public int oppTrenchCount = 0;
     public boolean oppTrenchIsClicked = false;
@@ -21,7 +24,7 @@ public class opponentTrench extends MainActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.auto_screen);
 
-        opponentTrenchBtn = findViewById(R.id.opponentTrench);
+        opponentTrenchBtn = findViewById(R.id.opp_launch_pad);
         opponentTrenchCount = findViewById(R.id.OppTrenchCount);
     }
     public void oppTrench_IsPressed (){
@@ -30,6 +33,7 @@ public class opponentTrench extends MainActivity {
             public void onClick(View v) {//if the alliance trench button is clicked, then this executes
                 oppTrenchIsClicked = true;
                 opponentTrenchCount.setText(Integer.toString(oppTrenchCount++));
+                opponentTrenchData.add(oppTrenchCount);
                 undoButton.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
@@ -44,6 +48,7 @@ public class opponentTrench extends MainActivity {
         stk.push(oppTrenchCount);
         while (stk.firstElement() == oppTrenchCount) {
             opponentTrenchCount.setText(Integer.toString(oppTrenchCount -= 1));
+            opponentTrenchData.remove(oppTrenchCount -= 1);
         }
         stk.pop();
     }

@@ -26,9 +26,6 @@ public class CommentActivity extends MainActivity {
     public boolean entry_isPressed = false;
     public boolean robot_incapacitated_isPressed = false;
 
-
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

@@ -17,7 +17,7 @@ import com.example.scoutingapp.timer;
 
 public class teleop extends MainActivity {
 
-
+    //creating variables
     ProgressBar matchTimer;
     TextView timer_txt;
     Button startTimer;
@@ -32,8 +32,6 @@ public class teleop extends MainActivity {
     public CommentActivity commentActivityObj = new CommentActivity();
     public robotHitMiss robotHitMissObj = new robotHitMiss();
 
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -47,14 +45,14 @@ public class teleop extends MainActivity {
         commentBtn = findViewById(R.id.commentBtn);
         undoButton = findViewById(R.id.undoButton);
 
-        if (timerObj.isTimerRunning){
+        if (timerObj.isTimerRunning){ // if the timer is running then this code will execute
             timerObj.startTimer();
             timerObj.updateCountDownText();
         }
         else{
             timerObj.pauseTimer();
         }
-        commentBtn.setOnClickListener(new View.OnClickListener() {
+        commentBtn.setOnClickListener(new View.OnClickListener() {//if the comment button is pressed then this code will execute
             @Override
             public void onClick(View v) {
                 openCommentActivity();
