@@ -10,10 +10,10 @@
         android:id="@+id/timerPng"
         android:layout_width="41dp"
         android:layout_height="17dp"
-        android:layout_marginBottom="40dp"
+        android:layout_marginBottom="36dp"
         app:layout_constraintBottom_toTopOf="@+id/matchTimer"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.748"
+        app:layout_constraintHorizontal_bias="0.81"
         app:layout_constraintStart_toStartOf="parent"
         app:srcCompat="@android:drawable/ic_lock_idle_alarm" />
 
@@ -21,8 +21,8 @@
         android:id="@+id/teamPNG"
         android:layout_width="41dp"
         android:layout_height="17dp"
-        android:layout_marginEnd="84dp"
-        android:layout_marginBottom="40dp"
+        android:layout_marginEnd="72dp"
+        android:layout_marginBottom="36dp"
         app:layout_constraintBottom_toTopOf="@+id/matchTimer"
         app:layout_constraintEnd_toStartOf="@+id/timerPng"
         app:srcCompat="@drawable/simple_two_business_people_handshake_line_icon_symbol_sign_vector_illustration_design_isolated_white_background_element_110609180" />
@@ -79,10 +79,10 @@
         android:text="TextView"
         app:layout_constraintBottom_toTopOf="@+id/matchTimer"
         app:layout_constraintEnd_toStartOf="@+id/timerPng"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toEndOf="@+id/teamPNG"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.35" />
+        app:layout_constraintVertical_bias="0.368" />
 
     <TextView
         android:id="@+id/timerTxt"
@@ -91,7 +91,7 @@
         android:text="TextView"
         app:layout_constraintBottom_toTopOf="@+id/matchTimer"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.371"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toEndOf="@+id/timerPng"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.35" />
@@ -169,7 +169,7 @@
         android:layout_width="match_parent"
         android:layout_height="450dp"
         android:orientation="vertical"
-        android:weightSum="4"
+        android:weightSum="3"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent">
@@ -180,7 +180,8 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:gravity="center"
-            android:text="CLIMB" />
+            android:text="CLIMB"
+            android:textSize="20sp" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -228,7 +229,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:text="Climb Location" />
+            android:text="Climb Location"
+            android:textSize="20sp" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -279,6 +281,42 @@
                 android:textColor="#B2EBF2"
                 android:textOff="traversal rung"
                 android:textOn="traversal rung" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/climb_speed"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="climb speed"
+            android:textSize="20sp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/climb_slow"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="slow" />
+
+            <Button
+                android:id="@+id/climb_medum"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="medium" />
+
+            <Button
+                android:id="@+id/fast_climb"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="fast" />
         </LinearLayout>
 
     </LinearLayout>

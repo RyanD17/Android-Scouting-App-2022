@@ -29,6 +29,8 @@ public class robotHitMiss extends MainActivity {
     Button LowHitBtn;
     TextView LowHitTxt;
 
+    public Stack<Integer> stk = new Stack<>();
+
 
     public int autoHighMissCount = 0;
     public int autoHighHitCount = 0;
@@ -75,205 +77,142 @@ public class robotHitMiss extends MainActivity {
         LowHitTxt = findViewById(R.id.autoLowHitCount);
     }
 
+    @SuppressLint("SetTextI18n")
     public void autoHighHit_isPressed (){
         //code for making the auto high hit button work
-        autoHighHitBtn.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                autoHighHit_isClicked = true;
-                autoHighHitBtnCount.setText(Integer.toString(autoHighHitCount++));
-                undoButton.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        autoHighHitUndoOperation();
-                    }
-                });
-            }
+        autoHighHitBtn.setOnClickListener(v -> {
+            autoHighHit_isClicked = true;
+            autoHighHitBtnCount.setText(Integer.toString(autoHighHitCount++));
+            undoButton.setOnClickListener(v1 -> undoOperation());
         });
     }
 
+    @SuppressLint("SetTextI18n")
     public void autoLowHit_isPressed (){
         //code for making the auto low hit button work
-        autoLowHitBtn.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                autoLowHit_isClicked = true;
-                autoLowHitTxt.setText(Integer.toString(autoLowHitCount++));
+        autoLowHitBtn.setOnClickListener(v -> {
+            autoLowHit_isClicked = true;
+            autoLowHitTxt.setText(Integer.toString(autoLowHitCount++));
 
-                undoButton.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        autoLowHitUndoOperation();
-                    }
-                });
-            }
+            undoButton.setOnClickListener(v1 -> undoOperation());
         });
     }
 
+    @SuppressLint("SetTextI18n")
     public void autoHighMiss_isPressed (){
         //code for making the auto high miss button work
-        autoHighMissBtn.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                HighMiss_isClicked = true;
-                autoHighMissBtnCount.setText(Integer.toString(autoHighMissCount++));
-                undoButton.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        autoHighMissUndoOperation();
-                    }
-                });
-            }
+        autoHighMissBtn.setOnClickListener(v -> {
+            autoHighMiss_isClicked = true;
+            autoHighMissBtnCount.setText(Integer.toString(autoHighMissCount++));
+            undoButton.setOnClickListener(v1 -> undoOperation());
         });
     }
 
+    @SuppressLint("SetTextI18n")
     public void autoLowMiss_isPressed(){
         //code for making the auto low miss button work
-        autoLowMissBtn.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                autoLowMiss_isClicked = true;
-                autoLowMissTxt.setText(Integer.toString(autoLowMissCount++));
+        autoLowMissBtn.setOnClickListener(v -> {
+            autoLowMiss_isClicked = true;
+            autoLowMissTxt.setText(Integer.toString(autoLowMissCount++));
 
-                undoButton.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        autoLowMissUndoOperation();
-                    }
-                });
-            }
+            undoButton.setOnClickListener(v1 -> undoOperation());
         });
     }
     public void HighHit_isPressed(){
         //code for making the  high hit button work
-        HighHitBtn.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                HighHit_isClicked = true;
-                HighHitBtnCount.setText(Integer.toString(HighHitCount++));
-                undoButton.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        HighHitUndoOperation();
-                    }
-                });
-            }
+        HighHitBtn.setOnClickListener(v -> {
+            HighHit_isClicked = true;
+            HighHitBtnCount.setText(Integer.toString(HighHitCount++));
+            undoButton.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    undoOperation();
+                }
+            });
         });
     }
 
+    @SuppressLint("SetTextI18n")
     public void LowHit_isPressed(){
         //code for making the  low hit button work
-        LowHitBtn.setOnClickListener(new View.OnClickListener() {
-            @SuppressLint("SetTextI18n")
-            public void onClick(View v) {
-                LowHit_isClicked = true;
-                LowHitTxt.setText(Integer.toString(LowHitCount++));
-                undoButton.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        LowHitUndoOperation();
-                    }
-                });
-            }
+        LowHitBtn.setOnClickListener(v -> {
+            LowHit_isClicked = true;
+            LowHitTxt.setText(Integer.toString(LowHitCount++));
+            undoButton.setOnClickListener(v1 -> undoOperation());
         });
     }
 
+    @SuppressLint("SetTextI18n")
     public void HighMiss_isPressed(){
         //code for making the  high miss button work
-        HighMissBtn.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                HighMiss_isClicked = true;
-                HighMissBtnCount.setText(Integer.toString(HighMissCount++));
-                undoButton.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        HighMissUndoOperation();
-                    }
-                });
-            }
+        HighMissBtn.setOnClickListener(v -> {
+            HighMiss_isClicked = true;
+            HighMissBtnCount.setText(Integer.toString(HighMissCount++));
+            undoButton.setOnClickListener(v1 -> undoOperation());
         });
     }
 
     public void LowMiss_isPressed(){
         //code for making the  low miss button work
-        LowMissBtn.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                LowMiss_isClicked = true;
-                LowMissTxt.setText(Integer.toString(LowMissCount++));
+        LowMissBtn.setOnClickListener(v -> {
+            LowMiss_isClicked = true;
+            LowMissTxt.setText(Integer.toString(LowMissCount++));
 
-                undoButton.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        LowMissUndoOperation();
-                    }
-                });
-            }
+            undoButton.setOnClickListener(v1 -> undoOperation());
         });
     }
 
-    private void autoLowMissUndoOperation() {
-        Stack<Integer> stk = new Stack<>();
-        stk.push(autoLowMissCount);
-        while (stk.firstElement() == autoLowMissCount) {
-            autoLowMissTxt.setText(Integer.toString(autoLowMissCount -= 1));
+    public void undoOperation(){
+        switch (stk.firstElement()) {
+            case 1:
+                stk.push(autoLowMissCount);
+                while (stk.firstElement() == autoLowMissCount){
+                    autoLowMissTxt.setText(Integer.toString(autoLowMissCount-=1));
+                }
+                stk.pop();
+            case 2:
+                stk.push(autoHighMissCount);
+                while (stk.firstElement() == autoHighMissCount) {
+                    autoHighMissBtnCount.setText(Integer.toString(autoHighMissCount -= 1));
+                }
+                stk.pop();
+            case 3:
+                stk.push(autoLowHitCount);
+                while (stk.firstElement() == autoLowHitCount) {
+                    autoLowHitTxt.setText(Integer.toString(autoLowHitCount -= 1));
+                }
+                stk.pop();
+            case 4:
+                stk.push(autoHighHitCount);
+                while (stk.firstElement() == autoHighHitCount) {
+                    autoHighHitBtnCount.setText(Integer.toString(autoHighHitCount -= 1));
+                }
+                stk.pop();
+            case 5:
+                stk.push(LowMissCount);
+                while (stk.firstElement() == LowMissCount) {
+                    LowMissTxt.setText(Integer.toString(LowMissCount -= 1));
+                }
+                stk.pop();
+            case 6:
+                stk.push(HighMissCount);
+                while (stk.firstElement() == HighMissCount) {
+                    HighMissBtnCount.setText(Integer.toString(HighMissCount -= 1));
+                }
+                stk.pop();
+            case 7:
+                stk.push(LowHitCount);
+                while (stk.firstElement() == LowHitCount) {
+                    LowHitTxt.setText(Integer.toString(LowHitCount -= 1));
+                }
+                stk.pop();
+            case 8:
+                Stack<Integer> stk = new Stack<>();
+                stk.push(HighHitCount);
+                while (stk.firstElement() == HighHitCount) {
+                    HighHitBtnCount.setText(Integer.toString(HighHitCount -= 1));
+                }
+                stk.pop();
         }
-        stk.pop();
-    }
-
-    private void autoHighMissUndoOperation() {
-        Stack<Integer> stk = new Stack<>();
-        stk.push(autoHighMissCount);
-        while (stk.firstElement() == autoHighMissCount) {
-            autoHighMissBtnCount.setText(Integer.toString(autoHighMissCount -= 1));
-        }
-        stk.pop();
-    }
-
-    private void autoLowHitUndoOperation() {
-        Stack<Integer> stk = new Stack<>();
-        stk.push(autoLowHitCount);
-        while (stk.firstElement() == autoLowHitCount) {
-            autoLowHitTxt.setText(Integer.toString(autoLowHitCount -= 1));
-        }
-        stk.pop();
-    }
-
-    private void autoHighHitUndoOperation() {
-        Stack<Integer> stk = new Stack<>();
-        stk.push(autoHighHitCount);
-        while (stk.firstElement() == autoHighHitCount) {
-            autoHighHitBtnCount.setText(Integer.toString(autoHighHitCount -= 1));
-        }
-        stk.pop();
-    }
-    private void LowMissUndoOperation() {
-        Stack<Integer> stk = new Stack<>();
-        stk.push(LowMissCount);
-        while (stk.firstElement() == LowMissCount) {
-            LowMissTxt.setText(Integer.toString(LowMissCount -= 1));
-        }
-        stk.pop();
-    }
-
-    private void HighMissUndoOperation() {
-        Stack<Integer> stk = new Stack<>();
-        stk.push(HighMissCount);
-        while (stk.firstElement() == HighMissCount) {
-            HighMissBtnCount.setText(Integer.toString(HighMissCount -= 1));
-        }
-        stk.pop();
-    }
-
-    private void LowHitUndoOperation() {
-        Stack<Integer> stk = new Stack<>();
-        stk.push(LowHitCount);
-        while (stk.firstElement() == LowHitCount) {
-            LowHitTxt.setText(Integer.toString(LowHitCount -= 1));
-        }
-        stk.pop();
-    }
-
-    private void HighHitUndoOperation() {
-        Stack<Integer> stk = new Stack<>();
-        stk.push(HighHitCount);
-        while (stk.firstElement() == HighHitCount) {
-            HighHitBtnCount.setText(Integer.toString(HighHitCount -= 1));
-        }
-        stk.pop();
     }
 }

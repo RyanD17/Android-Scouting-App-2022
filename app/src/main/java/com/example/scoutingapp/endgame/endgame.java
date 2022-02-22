@@ -1,53 +1,39 @@
 package com.example.scoutingapp.endgame;
 
+import android.content.Intent;
 import android.graphics.Color;
+import android.view.MotionEvent;
 import android.widget.CheckBox;
 import android.widget.ToggleButton;
 
 import com.example.scoutingapp.R;
 import com.example.scoutingapp.autoscreen.MainActivity;
+import com.example.scoutingapp.qr_code;
+import com.example.scoutingapp.teleop_screen.teleop;
 
 
 public class endgame extends MainActivity {
 
     //creating a new Main Activity Object
-    public MainActivity mainActivityObj = new MainActivity();
-
+    public  MainActivity mainActivityObj=new MainActivity();
     //initializing toggle buttons
-    public ToggleButton noneBtn;
-    public ToggleButton attempt;
-    public ToggleButton success;
-    public ToggleButton lowRung;
-    public ToggleButton DSR_one;
-    public ToggleButton DSR_three;
-    public ToggleButton DSR_four;
-    public ToggleButton DSR_five;
-
+    public ToggleButton noneBtn, attempt, success, lowRung, midRung, highRung, transversalRung;
     //initializing check boxes
-    public CheckBox balanced_cb;
-    public CheckBox active_balanced_cb;
+    public CheckBox balanced_cb, active_balanced_cb;
 
-    public boolean isClicked = false;
+    public boolean isClicked=false;
+    float x1, x2, y1, y2;
 
-    public endgame (float x1, float x2, float y1, float y2) {
-        noneBtn = findViewById(R.id.climb_none);
-        attempt = findViewById(R.id.climb_attempt);
-        success = findViewById(R.id.climb_success);
+    public endgame () {
 
-        lowRung = findViewById(R.id.climb_mid);
-        downBtn = findViewById(R.id.climb_high);
-        middleBtn = findViewById(R.id.climb_low);
-        balancedBtn = findViewById(R.id.climb_traversal);
+        noneBtn=findViewById(R.id.climb_none);
+        attempt=findViewById(R.id.climb_attempt);
+        success=findViewById(R.id.climb_success);
 
-        DSR_one = findViewById(R.id.one);
-        DSR_two = findViewById(R.id.two);
-        DSR_three = findViewById(R.id.three);
-        DSR_four = findViewById(R.id.four);
-        DSR_five = findViewById(R.id.five);
-
-        balanced_cb = findViewById(R.id.balanced_cb);
-        active_balanced_cb = findViewById(R.id.active_balance_cb);
-
+        midRung=findViewById(R.id.climb_mid);
+        highRung=findViewById(R.id.climb_high);
+        lowRung=findViewById(R.id.climb_low);
+        transversalRung=findViewById(R.id.climb_traversal);
     }
 
     public void noneBtn_isPressed () {
@@ -79,47 +65,47 @@ public class endgame extends MainActivity {
         }
     }
 
-    public void upBtn_isPressed () {
+    public void lowRung_isPressed () {
         if (isClicked) {
-            upBtn.setBackgroundColor(Color.GREEN);
-            downBtn.setBackgroundColor(Color.RED);
-            middleBtn.setBackgroundColor(Color.RED);
-            balancedBtn.setBackgroundColor(Color.RED);
+            lowRung.setBackgroundColor(Color.GREEN);
+            midRung.setBackgroundColor(Color.RED);
+            highRung.setBackgroundColor(Color.RED);
+            transversalRung.setBackgroundColor(Color.RED);
         } else {
-            upBtn.setBackgroundColor(Color.RED);
+            lowRung.setBackgroundColor(Color.RED);
         }
     }
 
-    public void downBtn_isPressed () {
+    public void midRung_isPressed () {
         if (isClicked) {
-            downBtn.setBackgroundColor(Color.GREEN);
-            upBtn.setBackgroundColor(Color.RED);
-            middleBtn.setBackgroundColor(Color.RED);
-            balancedBtn.setBackgroundColor(Color.RED);
+            midRung.setBackgroundColor(Color.GREEN);
+            lowRung.setBackgroundColor(Color.RED);
+            highRung.setBackgroundColor(Color.RED);
+            transversalRung.setBackgroundColor(Color.RED);
         } else {
-            downBtn.setBackgroundColor(Color.RED);
+            midRung.setBackgroundColor(Color.RED);
         }
     }
 
-    public void middleBtn_isPressed () {
+    public void HighRung_isPressed () {
         if (isClicked) {
-            downBtn.setBackgroundColor(Color.RED);
-            upBtn.setBackgroundColor(Color.RED);
-            middleBtn.setBackgroundColor(Color.GREEN);
-            balancedBtn.setBackgroundColor(Color.RED);
+            highRung.setBackgroundColor(Color.RED);
+            midRung.setBackgroundColor(Color.RED);
+            lowRung.setBackgroundColor(Color.GREEN);
+            transversalRung.setBackgroundColor(Color.RED);
         } else {
-            middleBtn.setBackgroundColor(Color.RED);
+            highRung.setBackgroundColor(Color.RED);
         }
     }
 
-    public void balancedBtn_IsPressed () {
+    public void transversalRung_IsPressed () {
         if (isClicked) {
-            downBtn.setBackgroundColor(Color.RED);
-            upBtn.setBackgroundColor(Color.RED);
-            middleBtn.setBackgroundColor(Color.RED);
-            balancedBtn.setBackgroundColor(Color.GREEN);
+            transversalRung.setBackgroundColor(Color.RED);
+            highRung.setBackgroundColor(Color.RED);
+            midRung.setBackgroundColor(Color.RED);
+            lowRung.setBackgroundColor(Color.GREEN);
         } else {
-            balancedBtn.setBackgroundColor(Color.RED);
+            transversalRung.setBackgroundColor(Color.RED);
         }
     }
 }

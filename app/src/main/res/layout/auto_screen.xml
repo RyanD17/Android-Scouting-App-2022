@@ -167,6 +167,23 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:orientation="horizontal">
+
+            <CheckBox
+                android:id="@+id/taxi"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@color/purple_500"
+                android:text="TAXI"
+                android:textColor="@android:color/white"
+                android:textSize="20dp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
             android:baselineAligned="false"
             android:orientation="horizontal">
 
@@ -275,57 +292,6 @@
                     android:textColor="@android:color/white"
                     android:textColorHint="@android:color/white" />
 
-            </FrameLayout>
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:orientation="horizontal">
-
-            <FrameLayout
-                android:layout_width="165dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1">
-
-                <Button
-                    android:id="@+id/HPMiss"
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:text="Human Player Miss" />
-
-                <TextView
-                    android:id="@+id/HPMissCount"
-                    android:layout_width="29dp"
-                    android:layout_height="36dp"
-                    android:elevation="10dp"
-                    android:gravity="center"
-                    android:text="0"
-                    android:textColor="@android:color/white" />
-
-            </FrameLayout>
-
-            <FrameLayout
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_weight="1">
-
-                <TextView
-                    android:id="@+id/HPHitCount"
-                    android:layout_width="28dp"
-                    android:layout_height="36dp"
-                    android:elevation="10dp"
-                    android:gravity="center"
-                    android:text="0"
-                    android:textColor="@android:color/white" />
-
-                <Button
-                    android:id="@+id/HPHit"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:text="human Player hit" />
             </FrameLayout>
 
         </LinearLayout>

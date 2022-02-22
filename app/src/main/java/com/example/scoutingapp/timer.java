@@ -55,12 +55,7 @@ public class timer extends MainActivity {
             }
 
         });
-        pauseTimer.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                pauseTimer();
-            }
-        });
+        pauseTimer.setOnClickListener(v -> pauseTimer());
     }
 
     public void startTimer() {

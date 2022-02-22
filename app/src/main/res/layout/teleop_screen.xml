@@ -159,60 +159,73 @@
         android:layout_width="match_parent"
         android:layout_height="450dp"
         android:orientation="vertical"
-        android:weightSum="4"
+        android:weightSum="3"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent">
 
         <LinearLayout
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="0dp"
-            android:layout_marginTop="0dp"
             android:layout_weight="1"
             android:orientation="horizontal">
 
             <FrameLayout
                 android:layout_width="wrap_content"
-                android:layout_height="match_parent">
+                android:layout_height="match_parent"
+                android:layout_weight="1">
 
-                <ToggleButton
-                    android:id="@+id/control_panel"
-                    android:layout_width="121dp"
+                <Button
+                    android:id="@+id/foul"
+                    android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:background="@color/purple_500"
-                    android:textColor="#93FF45"
-                    android:textOff="control panel"
-                    android:textOn="control panel"
-                    tools:ignore="DuplicateSpeakableTextCheck" />
+                    android:text="foul" />
+
+                <TextView
+                    android:id="@+id/foul_count"
+                    android:layout_width="34dp"
+                    android:layout_height="40dp"
+                    android:elevation="10dp"
+                    android:gravity="center"
+                    android:text="0"
+                    android:textColor="@android:color/white" />
+
             </FrameLayout>
 
             <FrameLayout
                 android:layout_width="wrap_content"
-                android:layout_height="match_parent">
+                android:layout_height="match_parent"
+                android:layout_weight="1">
 
                 <ToggleButton
                     android:id="@+id/defending"
-                    android:layout_width="121dp"
+                    android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:background="@color/purple_500"
-                    android:textColor="#93FF45"
+                    android:textColor="@android:color/white"
                     android:textOff="defending"
                     android:textOn="defending" />
             </FrameLayout>
 
             <FrameLayout
-                android:layout_width="168dp"
-                android:layout_height="match_parent">
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1">
 
-                <ToggleButton
-                    android:id="@+id/risisting"
+                <Button
+                    android:id="@+id/tech_foul"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:background="@color/purple_500"
-                    android:textColor="#93FF45"
-                    android:textOff="risisting"
-                    android:textOn="risisting" />
+                    android:text="tech foul" />
+
+                <TextView
+                    android:id="@+id/tech_foul_count"
+                    android:layout_width="38dp"
+                    android:layout_height="39dp"
+                    android:elevation="10dp"
+                    android:gravity="center"
+                    android:text="0"
+                    android:textColor="@android:color/white" />
             </FrameLayout>
 
         </LinearLayout>
@@ -318,64 +331,6 @@
                     android:text="high miss" />
             </FrameLayout>
 
-        </LinearLayout>
-
-        <TextView
-            android:id="@+id/Climb_txt"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:gravity="center"
-            android:text="FIELD AREA" />
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:orientation="horizontal">
-
-            <ToggleButton
-                android:id="@+id/launchPadBtn"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:background="@android:color/holo_red_dark"
-                android:text="cross"
-                android:textColor="#B2EBF2"
-                android:textOff="cross"
-                android:textOn="cross" />
-
-            <ToggleButton
-                android:id="@+id/tarmacBtn"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:background="@android:color/holo_red_dark"
-                android:text="TRENCH"
-                android:textColor="#B2EBF2"
-                android:textOff="TRENCH"
-                android:textOn="TRENCH" />
-
-            <ToggleButton
-                android:id="@+id/midBtn"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:background="@android:color/holo_red_dark"
-                android:text="MID"
-                android:textColor="#B2EBF2"
-                android:textOff="MID"
-                android:textOn="MID" />
-
-            <ToggleButton
-                android:id="@+id/targetBtn"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:background="@android:color/holo_red_dark"
-                android:text="TARGET"
-                android:textColor="#B2EBF2"
-                android:textOff="TARGET"
-                android:textOn="TARGET" />
         </LinearLayout>
 
     </LinearLayout>
