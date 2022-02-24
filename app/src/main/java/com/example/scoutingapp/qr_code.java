@@ -24,14 +24,10 @@ public class qr_code extends AppCompatActivity {
     ImageView qr_code;
     Button generateCode;
 
-
-
     public MainActivity mainActivityObj = new MainActivity();
     public robotHitMiss robotHitMissObj = new robotHitMiss();
     public defending defendingObj = new defending();
     public fouls foulsObj = new fouls();
-
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -61,6 +57,7 @@ public class qr_code extends AppCompatActivity {
             autoLowMissEditor.putString("number", String.valueOf(robotHitMissObj.autoLowMissCount));
 
             SharedPreferences.Editor defenseTimeEditor = sp.edit();
+
 
         });
 
