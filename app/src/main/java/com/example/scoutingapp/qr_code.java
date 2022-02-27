@@ -1,5 +1,6 @@
 package com.example.scoutingapp;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -24,10 +25,11 @@ public class qr_code extends AppCompatActivity {
     ImageView qr_code;
     Button generateCode;
 
-    public MainActivity mainActivityObj = new MainActivity();
-    public robotHitMiss robotHitMissObj = new robotHitMiss();
+    public final MainActivity mainActivityObj = new MainActivity();
+    public final robotHitMiss robotHitMissObj = new robotHitMiss();
     public defending defendingObj = new defending();
-    public fouls foulsObj = new fouls();
+    public final fouls foulsObj = new fouls();
+    public final select_board select_boardObj = new select_board();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,8 +38,6 @@ public class qr_code extends AppCompatActivity {
 
         qr_code = findViewById(R.id.QRCode);
         generateCode = findViewById(R.id.generateCode);
-
-
 
         SharedPreferences sp;
 
@@ -50,16 +50,22 @@ public class qr_code extends AppCompatActivity {
             SharedPreferences.Editor autoLowHitEditor = sp.edit();
             autoLowHitEditor.putString("number", String.valueOf(robotHitMissObj.autoLowHitCount));
 
-            SharedPreferences.Editor autoHighMissEditor = sp.edit();
+            @SuppressLint("CommitPrefEdits") SharedPreferences.Editor autoHighMissEditor = sp.edit();
             autoHighMissEditor.putString("number", String.valueOf(robotHitMissObj.autoHighMissCount));
 
-            SharedPreferences.Editor autoLowMissEditor = sp.edit();
+            @SuppressLint("CommitPrefEdits") SharedPreferences.Editor autoLowMissEditor = sp.edit();
             autoLowMissEditor.putString("number", String.valueOf(robotHitMissObj.autoLowMissCount));
 
-            SharedPreferences.Editor defenseTimeEditor = sp.edit();
+            @SuppressLint("CommitPrefEdits") SharedPreferences.Editor defenseTimeEditor = sp.edit();
+            defenseTimeEditor.putString("number", String.valueOf(defendingObj.defense_count));
+
+            @SuppressLint("CommitPrefEdits") SharedPreferences.Editor foulsEditor = sp.edit();
+            foulsEditor.putString("number", String.valueOf(foulsObj.foul_count));
+
+            @SuppressLint("CommitPrefEdits") SharedPreferences.Editor tech_foulEditor = sp.edit();
+            tech_foulEditor.putString("number", String.valueOf(foulsObj.tech_foul_count));
 
 
         });
-
     }
 }

@@ -37,7 +37,7 @@
         android:text="generate QR Code"
         app:layout_constraintBottom_toTopOf="@+id/QRCode"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.46"
+        app:layout_constraintHorizontal_bias="0.442"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/qr_code_txt"
         app:layout_constraintVertical_bias="0.0" />

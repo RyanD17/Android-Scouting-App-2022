@@ -6,4 +6,58 @@
     android:layout_height="match_parent"
     tools:context=".select_board">
 
+    <LinearLayout
+        android:layout_width="417dp"
+        android:layout_height="294dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <CheckBox
+            android:id="@+id/red_1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/holo_red_dark"
+            android:text="CheckBox"
+            android:textColor="#B2EBF2" />
+
+        <CheckBox
+            android:id="@+id/red_2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/holo_red_dark"
+            android:text="RED 2"
+            android:textColor="#B2EBF2" />
+
+        <CheckBox
+            android:id="@+id/red_3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/holo_red_dark"
+            android:text="RED 3"
+            android:textColor="#B2EBF2" />
+
+        <CheckBox
+            android:id="@+id/Blue_1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/holo_blue_bright"
+            android:text="Blue 1" />
+
+        <CheckBox
+            android:id="@+id/blue_2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/holo_blue_bright"
+            android:text="blue 2" />
+
+        <CheckBox
+            android:id="@+id/blue_3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/holo_blue_bright"
+            android:text="Blue 3" />
+    </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

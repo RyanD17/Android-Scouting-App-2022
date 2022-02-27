@@ -3,12 +3,49 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/amdaj/Desktop/Warp7ProgrammingFiles/Warp7programming/2022/app/src/main/res/drawable-normal/cornered_bg_accent.xml" value="0.1945" />
+        <entry key="..\:/Users/amdaj/Desktop/Warp7ProgrammingFiles/Warp7programming/2022/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.1945" />
+        <entry key="..\:/Users/amdaj/Desktop/Warp7ProgrammingFiles/Warp7programming/2022/app/src/main/res/drawable/cornered_bg_accent.xml" value="0.1945" />
+        <entry key="..\:/Users/amdaj/Desktop/Warp7ProgrammingFiles/Warp7programming/2022/app/src/main/res/drawable/cornered_bg_dark_accent.xml" value="0.1945" />
+        <entry key="..\:/Users/amdaj/Desktop/Warp7ProgrammingFiles/Warp7programming/2022/app/src/main/res/drawable/ic_account_box_small.xml" value="0.1945" />
+        <entry key="..\:/Users/amdaj/Desktop/Warp7ProgrammingFiles/Warp7programming/2022/app/src/main/res/drawable/ic_book_small.xml" value="0.1945" />
+        <entry key="..\:/Users/amdaj/Desktop/Warp7ProgrammingFiles/Warp7programming/2022/app/src/main/res/drawable/ic_comment.xml" value="0.1945" />
+        <entry key="..\:/Users/amdaj/Desktop/Warp7ProgrammingFiles/Warp7programming/2022/app/src/main/res/drawable/ic_comment_small.xml" value="0.1945" />
+        <entry key="..\:/Users/amdaj/Desktop/Warp7ProgrammingFiles/Warp7programming/2022/app/src/main/res/drawable/ic_date_range.xml" value="0.1945" />
+        <entry key="..\:/Users/amdaj/Desktop/Warp7ProgrammingFiles/Warp7programming/2022/app/src/main/res/drawable/ic_date_range_small.xml" value="0.1945" />
+        <entry key="..\:/Users/amdaj/Desktop/Warp7ProgrammingFiles/Warp7programming/2022/app/src/main/res/drawable/ic_launcher_background.xml" value="0.1945" />
+        <entry key="..\:/Users/amdaj/Desktop/Warp7ProgrammingFiles/Warp7programming/2022/app/src/main/res/drawable/ic_layers_small.xml" value="0.1945" />
+        <entry key="..\:/Users/amdaj/Desktop/Warp7ProgrammingFiles/Warp7programming/2022/app/src/main/res/drawable/ic_menu.xml" value="0.1945" />
+        <entry key="..\:/Users/amdaj/Desktop/Warp7ProgrammingFiles/Warp7programming/2022/app/src/main/res/drawable/ic_pause.xml" value="0.1945" />
+        <entry key="..\:/Users/amdaj/Desktop/Warp7ProgrammingFiles/Warp7programming/2022/app/src/main/res/drawable/ic_people_small.xml" value="0.1945" />
+        <entry key="..\:/Users/amdaj/Desktop/Warp7ProgrammingFiles/Warp7programming/2022/app/src/main/res/drawable/ic_settings.xml" value="0.1945" />
+        <entry key="..\:/Users/amdaj/Desktop/Warp7ProgrammingFiles/Warp7programming/2022/app/src/main/res/drawable/ic_timer_small.xml" value="0.1945" />
+        <entry key="..\:/Users/amdaj/Desktop/Warp7ProgrammingFiles/Warp7programming/2022/app/src/main/res/drawable/ic_undo.xml" value="0.1945" />
+        <entry key="..\:/Users/amdaj/Desktop/Warp7ProgrammingFiles/Warp7programming/2022/app/src/main/res/drawable/play_arrow.xml" value="0.1945" />
+        <entry key="..\:/Users/amdaj/Desktop/Warp7ProgrammingFiles/Warp7programming/2022/app/src/main/res/drawable/ripple_transparent.xml" value="0.1945" />
+        <entry key="..\:/Users/amdaj/Desktop/Warp7ProgrammingFiles/Warp7programming/2022/app/src/main/res/drawable/selector_accent_button.xml" value="0.1945" />
+        <entry key="..\:/Users/amdaj/Desktop/Warp7ProgrammingFiles/Warp7programming/2022/app/src/main/res/layout/activity_comment.xml" value="0.17074275362318841" />
+        <entry key="..\:/Users/amdaj/Desktop/Warp7ProgrammingFiles/Warp7programming/2022/app/src/main/res/layout/activity_event_selection.xml" value="0.17074275362318841" />
+        <entry key="..\:/Users/amdaj/Desktop/Warp7ProgrammingFiles/Warp7programming/2022/app/src/main/res/layout/activity_lisences.xml" value="0.17074275362318841" />
+        <entry key="..\:/Users/amdaj/Desktop/Warp7ProgrammingFiles/Warp7programming/2022/app/src/main/res/layout/activity_main.xml" value="0.17074275362318841" />
         <entry key="..\:/Users/amdaj/Desktop/Warp7ProgrammingFiles/Warp7programming/2022/app/src/main/res/layout/activity_qr_code.xml" value="0.2" />
+        <entry key="..\:/Users/amdaj/Desktop/Warp7ProgrammingFiles/Warp7programming/2022/app/src/main/res/layout/activity_scouting.xml" value="0.17074275362318841" />
         <entry key="..\:/Users/amdaj/Desktop/Warp7ProgrammingFiles/Warp7programming/2022/app/src/main/res/layout/activity_select_board.xml" value="0.17074275362318841" />
-        <entry key="..\:/Users/amdaj/Desktop/Warp7ProgrammingFiles/Warp7programming/2022/app/src/main/res/layout/auto_screen.xml" value="0.17074275362318841" />
-        <entry key="..\:/Users/amdaj/Desktop/Warp7ProgrammingFiles/Warp7programming/2022/app/src/main/res/layout/match_row.xml" value="0.2" />
+        <entry key="..\:/Users/amdaj/Desktop/Warp7ProgrammingFiles/Warp7programming/2022/app/src/main/res/layout/activity_settings.xml" value="0.17074275362318841" />
+        <entry key="..\:/Users/amdaj/Desktop/Warp7ProgrammingFiles/Warp7programming/2022/app/src/main/res/layout/auto_screen.xml" value="0.17" />
+        <entry key="..\:/Users/amdaj/Desktop/Warp7ProgrammingFiles/Warp7programming/2022/app/src/main/res/layout/dialog_scout.xml" value="0.17074275362318841" />
+        <entry key="..\:/Users/amdaj/Desktop/Warp7ProgrammingFiles/Warp7programming/2022/app/src/main/res/layout/endgame_screen.xml" value="0.22" />
+        <entry key="..\:/Users/amdaj/Desktop/Warp7ProgrammingFiles/Warp7programming/2022/app/src/main/res/layout/list_item_event_info.xml" value="0.17074275362318841" />
+        <entry key="..\:/Users/amdaj/Desktop/Warp7ProgrammingFiles/Warp7programming/2022/app/src/main/res/layout/list_match_info.xml" value="0.17074275362318841" />
+        <entry key="..\:/Users/amdaj/Desktop/Warp7ProgrammingFiles/Warp7programming/2022/app/src/main/res/layout/match_row.xml" value="0.25" />
+        <entry key="..\:/Users/amdaj/Desktop/Warp7ProgrammingFiles/Warp7programming/2022/app/src/main/res/layout/match_row2.xml" value="0.17074275362318841" />
         <entry key="..\:/Users/amdaj/Desktop/Warp7ProgrammingFiles/Warp7programming/2022/app/src/main/res/layout/match_schedule.xml" value="0.2" />
-        <entry key="..\:/Users/amdaj/Desktop/Warp7ProgrammingFiles/Warp7programming/2022/app/src/main/res/layout/teleop_screen.xml" value="0.3800403225806452" />
+        <entry key="..\:/Users/amdaj/Desktop/Warp7ProgrammingFiles/Warp7programming/2022/app/src/main/res/layout/swich_button.xml" value="0.17074275362318841" />
+        <entry key="..\:/Users/amdaj/Desktop/Warp7ProgrammingFiles/Warp7programming/2022/app/src/main/res/layout/teleop_screen.xml" value="0.33" />
+        <entry key="..\:/Users/amdaj/Desktop/Warp7ProgrammingFiles/Warp7programming/2022/app/src/main/res/layout/test.xml" value="0.17074275362318841" />
+        <entry key="..\:/Users/amdaj/Desktop/Warp7ProgrammingFiles/Warp7programming/2022/app/src/main/res/layout/toggle_swich.xml" value="0.17074275362318841" />
+        <entry key="..\:/Users/amdaj/Desktop/Warp7ProgrammingFiles/Warp7programming/2022/app/src/main/res/menu/main_menu.xml" value="0.2" />
+        <entry key="..\:/Users/amdaj/Desktop/Warp7ProgrammingFiles/Warp7programming/2022/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.1945" />
         <entry key="..\:/Users/amdaj/Desktop/Warp7ProgrammingFiles/scoutingApp2020/app/src/main/res/layout/activity_comment.xml" value="0.1" />
         <entry key="..\:/Users/amdaj/Desktop/Warp7ProgrammingFiles/scoutingApp2020/app/src/main/res/layout/activity_qr_code.xml" value="0.22" />
         <entry key="..\:/Users/amdaj/Desktop/Warp7ProgrammingFiles/scoutingApp2020/app/src/main/res/layout/auto_screen.xml" value="0.25" />

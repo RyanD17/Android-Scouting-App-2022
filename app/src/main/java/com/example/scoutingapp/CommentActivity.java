@@ -42,7 +42,6 @@ public class CommentActivity extends MainActivity {
         robot_disabled.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                robot_disabled_isPressed = robot_disabled_isPressed;
             }
         });
         robot_incapacitated.setOnClickListener(new View.OnClickListener() {

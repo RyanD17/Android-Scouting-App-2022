@@ -11,12 +11,12 @@
         android:layout_width="41dp"
         android:layout_height="17dp"
         android:layout_marginBottom="40dp"
+        android:contentDescription="TODO"
         app:layout_constraintBottom_toTopOf="@+id/matchTimer"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.748"
+        app:layout_constraintHorizontal_bias="0.813"
         app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@android:drawable/ic_lock_idle_alarm"
-        android:contentDescription="TODO" />
+        app:srcCompat="@drawable/ic_timer_small" />
 
     <ImageView
         android:id="@+id/teamPNG"
@@ -26,7 +26,7 @@
         android:layout_marginBottom="40dp"
         app:layout_constraintBottom_toTopOf="@+id/matchTimer"
         app:layout_constraintEnd_toStartOf="@+id/timerPng"
-        app:srcCompat="@drawable/simple_two_business_people_handshake_line_icon_symbol_sign_vector_illustration_design_isolated_white_background_element_110609180" />
+        app:srcCompat="@drawable/ic_people_small" />
 
     <ImageView
         android:id="@+id/layerPNG"
@@ -37,18 +37,18 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.264"
-        app:srcCompat="@drawable/layers_59_460671" />
+        app:srcCompat="@drawable/ic_layers_small" />
 
     <TextView
         android:id="@+id/matchNumber"
         android:layout_width="wrap_content"
         android:layout_height="17dp"
-        android:layout_marginEnd="108dp"
+        android:layout_marginEnd="116dp"
         android:text="TextView"
         app:layout_constraintBottom_toTopOf="@+id/matchTimer"
         app:layout_constraintEnd_toStartOf="@+id/teamPNG"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.263" />
+        app:layout_constraintVertical_bias="0.28" />
 
     <ImageView
         android:id="@+id/boardPNG"
@@ -60,7 +60,7 @@
         app:layout_constraintStart_toEndOf="@+id/matchNumber"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.264"
-        app:srcCompat="@android:drawable/ic_input_get" />
+        app:srcCompat="@drawable/ic_book_small" />
 
     <TextView
         android:id="@+id/boardTxt"
@@ -80,7 +80,6 @@
         android:text="TextView"
         app:layout_constraintBottom_toTopOf="@+id/matchTimer"
         app:layout_constraintEnd_toStartOf="@+id/timerPng"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/teamPNG"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.35" />
@@ -92,16 +91,16 @@
         android:text="TextView"
         app:layout_constraintBottom_toTopOf="@+id/matchTimer"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.371"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toEndOf="@+id/timerPng"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.35" />
+        app:layout_constraintVertical_bias="0.28" />
 
     <TextView
-        android:id="@+id/auto_txt"
+        android:id="@+id/teleop_txt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/auto"
+        android:text="Teleop"
         android:textSize="24sp"
         app:layout_constraintBottom_toTopOf="@+id/linearLayout"
         app:layout_constraintStart_toStartOf="parent" />
@@ -126,7 +125,7 @@
         app:layout_constraintBottom_toTopOf="@+id/linearLayout"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.537"
-        app:layout_constraintStart_toEndOf="@+id/auto_txt"
+        app:layout_constraintStart_toEndOf="@+id/teleop_txt"
         app:layout_constraintTop_toBottomOf="@+id/matchTimer"
         app:layout_constraintVertical_bias="1.0"
         tools:ignore="SpeakableTextPresentCheck" />
