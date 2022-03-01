@@ -4,7 +4,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+<<<<<<< HEAD
     tools:context=".commentActivity">
+=======
+    tools:context="scoutingapp.CommentActivity">
+>>>>>>> c2e939a (updating project)
 
     <LinearLayout
         android:layout_width="419dp"

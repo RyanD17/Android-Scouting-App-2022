@@ -4,16 +4,16 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".autoscreen.MainActivity">
+    tools:context="scoutingapp.endgame.endgame">
 
     <ImageView
         android:id="@+id/timerPng"
         android:layout_width="41dp"
         android:layout_height="17dp"
-        android:layout_marginBottom="36dp"
+        android:layout_marginBottom="112dp"
         app:layout_constraintBottom_toTopOf="@+id/matchTimer"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.81"
+        app:layout_constraintHorizontal_bias="0.845"
         app:layout_constraintStart_toStartOf="parent"
         app:srcCompat="@drawable/ic_timer_small" />
 
@@ -21,8 +21,8 @@
         android:id="@+id/teamPNG"
         android:layout_width="41dp"
         android:layout_height="17dp"
-        android:layout_marginEnd="72dp"
-        android:layout_marginBottom="36dp"
+        android:layout_marginEnd="56dp"
+        android:layout_marginBottom="120dp"
         app:layout_constraintBottom_toTopOf="@+id/matchTimer"
         app:layout_constraintEnd_toStartOf="@+id/timerPng"
         app:srcCompat="@drawable/ic_people_small" />
@@ -31,23 +31,23 @@
         android:id="@+id/layerPNG"
         android:layout_width="41dp"
         android:layout_height="17dp"
-        android:layout_marginStart="48dp"
+        android:layout_marginStart="8dp"
         app:layout_constraintBottom_toTopOf="@+id/matchTimer"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.264"
+        app:layout_constraintVertical_bias="0.648"
         app:srcCompat="@drawable/ic_layers_small" />
 
     <TextView
         android:id="@+id/matchNumber"
         android:layout_width="wrap_content"
         android:layout_height="17dp"
-        android:layout_marginEnd="108dp"
+        android:layout_marginEnd="152dp"
         android:text="TextView"
         app:layout_constraintBottom_toTopOf="@+id/matchTimer"
         app:layout_constraintEnd_toStartOf="@+id/teamPNG"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.263" />
+        app:layout_constraintVertical_bias="0.867" />
 
     <ImageView
         android:id="@+id/boardPNG"
@@ -55,22 +55,22 @@
         android:layout_height="17dp"
         app:layout_constraintBottom_toTopOf="@+id/matchTimer"
         app:layout_constraintEnd_toStartOf="@+id/boardTxt"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.388"
         app:layout_constraintStart_toEndOf="@+id/matchNumber"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.264"
+        app:layout_constraintVertical_bias="0.648"
         app:srcCompat="@android:drawable/ic_input_get" />
 
     <TextView
         android:id="@+id/boardTxt"
         android:layout_width="wrap_content"
         android:layout_height="17dp"
-        android:layout_marginEnd="8dp"
+        android:layout_marginEnd="48dp"
         android:text="TextView"
         app:layout_constraintBottom_toTopOf="@+id/matchTimer"
         app:layout_constraintEnd_toStartOf="@+id/teamPNG"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.264" />
+        app:layout_constraintVertical_bias="0.648" />
 
     <TextView
         android:id="@+id/teamNumber"
@@ -78,23 +78,21 @@
         android:layout_height="17dp"
         android:text="TextView"
         app:layout_constraintBottom_toTopOf="@+id/matchTimer"
-        app:layout_constraintEnd_toStartOf="@+id/timerPng"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toEndOf="@+id/teamPNG"
+        app:layout_constraintEnd_toEndOf="@+id/teamPNG"
+        app:layout_constraintStart_toStartOf="@+id/teamPNG"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.368" />
+        app:layout_constraintVertical_bias="0.367" />
 
     <TextView
         android:id="@+id/timerTxt"
         android:layout_width="wrap_content"
         android:layout_height="17dp"
+        android:layout_marginEnd="40dp"
         android:text="TextView"
         app:layout_constraintBottom_toTopOf="@+id/matchTimer"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toEndOf="@+id/timerPng"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.35" />
+        app:layout_constraintVertical_bias="0.367" />
 
     <TextView
         android:id="@+id/teleop_txt"
@@ -129,6 +127,24 @@
         app:layout_constraintTop_toBottomOf="@+id/matchTimer"
         app:layout_constraintVertical_bias="1.0"
         tools:ignore="SpeakableTextPresentCheck" />
+
+    <Button
+        android:id="@+id/goToTeleop"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Go To Teleop"
+        app:layout_constraintBottom_toTopOf="@+id/teleop_txt"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/matchTimer" />
+
+    <Button
+        android:id="@+id/goToQRCode"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Go To QR Code "
+        app:layout_constraintBottom_toTopOf="@+id/commentBtn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/matchTimer" />
 
     <ImageButton
         android:id="@+id/pauseBtn"

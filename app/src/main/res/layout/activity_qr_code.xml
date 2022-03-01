@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".qr_code">
+    tools:context="scoutingapp.qr_code">
 
     <TextView
         android:id="@+id/qr_code_txt"
@@ -37,9 +37,19 @@
         android:text="generate QR Code"
         app:layout_constraintBottom_toTopOf="@+id/QRCode"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.442"
+        app:layout_constraintHorizontal_bias="0.425"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/qr_code_txt"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintVertical_bias="0.549" />
+
+    <Button
+        android:id="@+id/goToEndgame"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="44dp"
+        android:text="Go To Endgame"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/QRCode" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

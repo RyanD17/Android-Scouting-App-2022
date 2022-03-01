@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".autoscreen.MainActivity">
+    tools:context="scoutingapp.autoscreen.MainActivity">
 
     <ImageView
         android:id="@+id/timerPng"
@@ -345,5 +345,23 @@
         app:layout_constraintTop_toTopOf="@+id/startMatchTimer"
         app:srcCompat="@android:drawable/ic_menu_revert"
         tools:ignore="SpeakableTextPresentCheck,DuplicateSpeakableTextCheck" />
+
+    <Button
+        android:id="@+id/toAuto"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="go to auto"
+        app:layout_constraintBottom_toTopOf="@+id/teleop_txt"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/matchTimer" />
+
+    <Button
+        android:id="@+id/toEndgame"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Go To Endgame"
+        app:layout_constraintBottom_toTopOf="@+id/commentBtn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/matchTimer" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
