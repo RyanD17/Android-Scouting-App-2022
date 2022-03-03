@@ -5,7 +5,6 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.widget.Button;
-import android.widget.ImageView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -18,8 +17,7 @@ import scoutingapp.teleop_screen.fouls;
 
 public class qr_code extends AppCompatActivity {
 
-    ImageView qr_code;
-    Button generateCode;
+    Button matchover;
     public final MainActivity mainActivityObj = new MainActivity();
     public final robotHitMiss robotHitMissObj = new robotHitMiss();
     public defending defendingObj = new defending();
@@ -34,15 +32,16 @@ public class qr_code extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_qr_code);
 
-        qr_code=findViewById(R.id.QRCode);
-        generateCode=findViewById(R.id.generateCode);
+
+
+        matchover=findViewById(R.id.matchOver);
 
 
         SharedPreferences sp;
 
         sp=getSharedPreferences("My Shared Prefs", Context.MODE_PRIVATE);
 
-        generateCode.setOnClickListener(v -> {
+        matchover.setOnClickListener(v -> {
 
 
             SharedPreferences.Editor autoHighHitEditor=sp.edit();
@@ -75,18 +74,12 @@ public class qr_code extends AppCompatActivity {
             boardEditor.putString("b2", String.valueOf(select_boardObj.b2IsPressed));
             boardEditor.putString("b3", String.valueOf(select_boardObj.b3IsPressed));
 
-            SharedPreferences.Editor defendingEditor=sp.edit();
-            defendingEditor.putString("time defended", String.valueOf(defendingObj.defense_time));
-
             commentActivityObj.robotDisabledEditor.putString("is Pressed", String.valueOf(commentActivityObj.robot_disabled_isPressed));
             commentActivityObj.robotIncapacitatedEditor.putString("is Pressed", String.valueOf(commentActivityObj.robot_incapacitated_isPressed));
             commentActivityObj.entryStaredLateEditor.putString("is Pressed", String.valueOf(commentActivityObj.entry_isPressed));
             commentActivityObj.reScoutRequiredEditor.putString("is Pressed", String.valueOf(commentActivityObj.rescout_required_isPressed));
 
 
-
-
-            
         });
     }
 }
