@@ -1,9 +1,14 @@
 package scoutingapp.endgame;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.widget.Button;
 import android.widget.ToggleButton;
+
 import com.example.scoutingapp.R;
+import com.google.zxing.qrcode.encoder.QRCode;
+
 import scoutingapp.autoscreen.MainActivity;
 
 
@@ -14,6 +19,7 @@ public class endgame extends MainActivity {
     //initializing toggle buttons
     public ToggleButton noneBtn, attempt, success, lowRung, midRung, highRung, transversalRung;
 
+    public Button goToQRCode;
     public boolean isClicked = false;
 
     @Override
@@ -30,7 +36,15 @@ public class endgame extends MainActivity {
         lowRung=findViewById(R.id.climb_low);
         transversalRung=findViewById(R.id.climb_traversal);
 
+
+        goToQRCode.setOnClickListener(v ->{
+            Intent goToQRCode = new Intent(this, QRCode.class);
+            startActivity(goToQRCode);
+        });
+
         mainActivityObj.goToTeleop();
+
+
 
         if (isClicked){
             noneBtn_isPressed();

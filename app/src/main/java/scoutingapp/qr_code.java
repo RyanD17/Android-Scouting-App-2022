@@ -3,9 +3,7 @@ package scoutingapp;
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.SharedPreferences;
-import android.graphics.Bitmap;
 import android.os.Bundle;
-import android.os.Environment;
 import android.widget.Button;
 import android.widget.ImageView;
 
@@ -22,15 +20,14 @@ public class qr_code extends AppCompatActivity {
 
     ImageView qr_code;
     Button generateCode;
-    private String inputValue;
-    private String savePath = Environment.getExternalStorageDirectory().getPath() + "/QRCode/";
-    private Bitmap bitmap;
     public final MainActivity mainActivityObj = new MainActivity();
     public final robotHitMiss robotHitMissObj = new robotHitMiss();
     public defending defendingObj = new defending();
     public final fouls foulsObj = new fouls();
     public final select_board select_boardObj = new select_board();
     public final CommentActivity commentActivityObj = new CommentActivity();
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,11 +37,14 @@ public class qr_code extends AppCompatActivity {
         qr_code=findViewById(R.id.QRCode);
         generateCode=findViewById(R.id.generateCode);
 
+
         SharedPreferences sp;
 
         sp=getSharedPreferences("My Shared Prefs", Context.MODE_PRIVATE);
 
         generateCode.setOnClickListener(v -> {
+
+
             SharedPreferences.Editor autoHighHitEditor=sp.edit();
             autoHighHitEditor.putString("number", String.valueOf(robotHitMissObj.autoHighHitCount));
 
@@ -83,6 +83,10 @@ public class qr_code extends AppCompatActivity {
             commentActivityObj.entryStaredLateEditor.putString("is Pressed", String.valueOf(commentActivityObj.entry_isPressed));
             commentActivityObj.reScoutRequiredEditor.putString("is Pressed", String.valueOf(commentActivityObj.rescout_required_isPressed));
 
+
+
+
+            
         });
     }
 }
