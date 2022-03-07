@@ -1,4 +1,4 @@
-package scoutingapp.autoscreen;
+package scoutingapp;
 
 import android.annotation.SuppressLint;
 import android.os.Bundle;
@@ -10,15 +10,18 @@ import com.example.scoutingapp.R;
 
 import java.util.Stack;
 
+import scoutingapp.autoscreen.MainActivity;
+
 public class robotHitMiss extends MainActivity {
-    Button autoHighMissBtn;
-    TextView autoHighMissBtnCount;
-    Button autoHighHitBtn;
-    TextView autoHighHitBtnCount;
-    Button autoLowMissBtn;
-    TextView autoLowMissTxt;
-    Button autoLowHitBtn;
-    TextView autoLowHitTxt;
+
+   public Button autoHighMissBtn;
+    public  TextView autoHighMissBtnCount;
+    public  Button autoHighHitBtn;
+    public   TextView autoHighHitBtnCount;
+    public Button autoLowMissBtn;
+    public  TextView autoLowMissTxt;
+    public  Button autoLowHitBtn;
+    public TextView autoLowHitTxt;
 
     Button HighMissBtn;
     TextView HighMissBtnCount;
@@ -29,53 +32,54 @@ public class robotHitMiss extends MainActivity {
     Button LowHitBtn;
     TextView LowHitTxt;
 
-    public Stack<Integer> stk = new Stack<>();
+    public Stack<Integer> stk=new Stack<>();
 
 
-    public int autoHighMissCount = 0;
-    public int autoHighHitCount = 0;
-    public int autoLowMissCount = 0;
-    public int autoLowHitCount = 0;
+    public int autoHighMissCount=0;
+    public int autoHighHitCount=0;
+    public int autoLowMissCount=0;
+    public int autoLowHitCount=0;
 
-    public int HighMissCount = 0;
-    public int HighHitCount = 0;
-    public int LowMissCount = 0;
-    public int LowHitCount = 0;
+    public int HighMissCount=0;
+    public int HighHitCount=0;
+    public int LowMissCount=0;
+    public int LowHitCount=0;
 
-    public boolean autoHighHit_isClicked = false;
-    public boolean autoHighMiss_isClicked = false;
-    public boolean autoLowHit_isClicked = false;
-    public boolean autoLowMiss_isClicked = false;
+    public boolean autoHighHit_isClicked=false;
+    public boolean autoHighMiss_isClicked=false;
+    public boolean autoLowHit_isClicked=false;
+    public boolean autoLowMiss_isClicked=false;
 
-    public boolean HighHit_isClicked = false;
-    public boolean LowHit_isClicked = false;
-    public boolean HighMiss_isClicked = false;
-    public boolean LowMiss_isClicked = false;
+    public boolean HighHit_isClicked=false;
+    public boolean LowHit_isClicked=false;
+    public boolean HighMiss_isClicked=false;
+    public boolean LowMiss_isClicked=false;
 
-    @SuppressLint("CutPasteId")
+
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate (Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.auto_screen);
 
-        autoHighMissBtn = findViewById(R.id.autoHighMiss);
-        autoHighMissBtnCount = findViewById(R.id.autoHighMissCount);
-        autoHighHitBtn = findViewById(R.id.autoHighHit);
-        autoHighHitBtnCount = findViewById(R.id.autoHighHitCount);
-        autoLowMissBtn = findViewById(R.id.autoLowMiss);
-        autoLowMissTxt = findViewById(R.id.autoLowMissCount);
-        autoLowHitBtn = findViewById(R.id.autoLowHit);
-        autoLowHitTxt = findViewById(R.id.autoLowHitCount);
+        autoHighMissBtn=findViewById(R.id.autoHighMiss);
+        autoHighMissBtnCount=findViewById(R.id.autoHighMissCount);
+        autoHighHitBtn=findViewById(R.id.autoHighHit);
+        autoHighHitBtnCount=findViewById(R.id.autoHighHitCount);
+        autoLowMissBtn=findViewById(R.id.autoLowMiss);
+        autoLowMissTxt=findViewById(R.id.autoLowMissCount);
+        autoLowHitBtn=findViewById(R.id.autoLowHit);
+        autoLowHitTxt=findViewById(R.id.autoLowHitCount);
 
-        HighMissBtn = findViewById(R.id.autoHighMiss);
-        HighMissBtnCount = findViewById(R.id.autoHighMissCount);
-        HighHitBtn = findViewById(R.id.autoHighHit);
-        HighHitBtnCount = findViewById(R.id.autoHighHitCount);
-        LowMissBtn = findViewById(R.id.autoLowMiss);
-        LowMissTxt = findViewById(R.id.autoLowMissCount);
-        LowHitBtn = findViewById(R.id.autoLowHit);
-        LowHitTxt = findViewById(R.id.autoLowHitCount);
+        HighMissBtn=findViewById(R.id.autoHighMiss);
+        HighMissBtnCount=findViewById(R.id.autoHighMissCount);
+        HighHitBtn=findViewById(R.id.autoHighHit);
+        HighHitBtnCount=findViewById(R.id.autoHighHitCount);
+        LowMissBtn=findViewById(R.id.autoLowMiss);
+        LowMissTxt=findViewById(R.id.autoLowMissCount);
+        LowHitBtn=findViewById(R.id.autoLowHit);
+        LowHitTxt=findViewById(R.id.autoLowHitCount);
+
     }
+
 
     @SuppressLint("SetTextI18n")
     public void autoHighHit_isPressed (){

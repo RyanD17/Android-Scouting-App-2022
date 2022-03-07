@@ -1,6 +1,5 @@
 package scoutingapp;
 
-import android.content.Context;
 import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Bundle;
@@ -9,17 +8,16 @@ import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.example.scoutingapp.R;
 
+public class CommentActivity extends AppCompatActivity {
 
-import scoutingapp.autoscreen.MainActivity;
-
-public class CommentActivity extends MainActivity {
-
-    public CheckBox robot_disabled;
-    public CheckBox robot_incapacitated;
-    public CheckBox entry_started_late;
-    public CheckBox scout_required;
+    CheckBox robot_disabled;
+    CheckBox robot_incapacitated;
+    CheckBox entry_started_late;
+    CheckBox scout_required;
     EditText other_comments;
     TextView ok_Btn;
     TextView cancel_Btn;
@@ -30,12 +28,6 @@ public class CommentActivity extends MainActivity {
     public boolean robot_incapacitated_isPressed = false;
 
     public SharedPreferences sp;
-
-    public SharedPreferences.Editor robotDisabledEditor = sp.edit();
-    public SharedPreferences.Editor robotIncapacitatedEditor = sp.edit();
-    public SharedPreferences.Editor entryStaredLateEditor = sp.edit();
-    public SharedPreferences.Editor reScoutRequiredEditor = sp.edit();
-
 
 
     @Override
@@ -99,15 +91,35 @@ public class CommentActivity extends MainActivity {
             }
         });
 
+        cancel_Btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick (View view) {
+                finishAndRemoveTask();
+            }
+        });
+
         ok_Btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                assert (sp != null);
+                SharedPreferences.Editor robotDisabledEditor = sp.edit();
+                SharedPreferences.Editor robotIncapacitatedEditor = sp.edit();
+                SharedPreferences.Editor entryStaredLateEditor = sp.edit();
+                SharedPreferences.Editor reScoutRequiredEditor = sp.edit();
+
                 robotDisabledEditor.putString("is Pressed", String.valueOf(robot_disabled_isPressed));
                 robotIncapacitatedEditor.putString("is Pressed", String.valueOf(robot_incapacitated_isPressed));
                 entryStaredLateEditor.putString("is Pressed", String.valueOf(entry_isPressed));
                 reScoutRequiredEditor.putString("Is Pressed", String.valueOf(rescout_required_isPressed));
+                robotDisabledEditor.apply();;
+                robotIncapacitatedEditor.apply();
+                entryStaredLateEditor.apply();
+                reScoutRequiredEditor.apply();
+
                 finishAndRemoveTask();
-            }
+
+
+                }
         });
     }
 }

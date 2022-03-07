@@ -15,12 +15,6 @@ public class match_row extends MainActivity {
 
     public boolean isR1Pressed = false;
 
-
-
-    private final timer timerObj = new timer();
-
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

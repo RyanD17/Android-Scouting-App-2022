@@ -6,13 +6,10 @@ import android.widget.ToggleButton;
 
 import com.example.scoutingapp.R;
 
-import scoutingapp.timer;
-
 public class defending extends teleop {
     ToggleButton defending;
 
     public boolean defending_is_clicked = false;
-    public timer timerObj = new timer();
     public int defense_time = 0;
 
     @Override

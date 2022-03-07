@@ -1,6 +1,7 @@
 package scoutingapp;
 
 import android.os.Bundle;
+import android.view.View;
 import android.widget.CheckBox;
 
 import com.example.scoutingapp.R;
@@ -26,7 +27,6 @@ public class select_board extends MainActivity {
     public boolean b2IsPressed = false;
     public boolean b3IsPressed = false;
 
-    private final timer timerObj = new timer();
 
     @Override
     protected void onCreate (Bundle savedInstanceState) {
@@ -35,8 +35,84 @@ public class select_board extends MainActivity {
 
         r1 = findViewById(R.id.red_1);
 
-        r1.setOnClickListener(v -> {
-
+        r1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick (View view) {
+                r1IsPressed = true;
+                r2IsPressed = false;
+                r3IsPressed = false;
+                b1IsPressed = false;
+                b2IsPressed = false;
+                b3IsPressed = false;
+                r1.setChecked(true);
+            }
         });
+        r1IsPressed = false;
+
+        r2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick (View view) {
+                r1IsPressed = false;
+                r2IsPressed = true;
+                r3IsPressed = false;
+                b1IsPressed = false;
+                b2IsPressed = false;
+                b3IsPressed = false;
+
+            }
+        });
+        r2IsPressed = false;
+
+        r3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick (View view) {
+                r1IsPressed = false;
+                r2IsPressed = false;
+                r3IsPressed = true;
+                b1IsPressed = false;
+                b2IsPressed = false;
+                b3IsPressed = false;
+            }
+        });
+        r3IsPressed = false;
+
+        b1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick (View view) {
+                r1IsPressed = false;
+                r2IsPressed = false;
+                r3IsPressed = false;
+                b1IsPressed = true;
+                b2IsPressed = false;
+                b3IsPressed = false;
+            }
+        });
+        b1IsPressed = false;
+
+        b2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick (View view) {
+                r1IsPressed = false;
+                r2IsPressed = false;
+                r3IsPressed = false;
+                b1IsPressed = false;
+                b2IsPressed = true;
+                b3IsPressed = false;
+            }
+        });
+        b2IsPressed = false;
+
+        b3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick (View view) {
+                r1IsPressed = false;
+                r2IsPressed = false;
+                r3IsPressed = false;
+                b1IsPressed = false;
+                b2IsPressed = false;
+                b3IsPressed = true;
+            }
+        });
+        b3IsPressed = false;
     }
 }

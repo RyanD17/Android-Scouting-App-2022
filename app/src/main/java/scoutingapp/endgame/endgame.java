@@ -1,18 +1,23 @@
 package scoutingapp.endgame;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.ToggleButton;
 
 import com.example.scoutingapp.R;
-import com.google.zxing.qrcode.encoder.QRCode;
 
+import scoutingapp.auto_data_generator;
 import scoutingapp.autoscreen.MainActivity;
 
 
 public class endgame extends MainActivity {
+
+    SharedPreferences sp;
+
 
     //creating a new Main Activity Object
     public  MainActivity mainActivityObj=new MainActivity();
@@ -20,7 +25,31 @@ public class endgame extends MainActivity {
     public ToggleButton noneBtn, attempt, success, lowRung, midRung, highRung, transversalRung;
 
     public Button goToQRCode;
+    public boolean taversal_isClicked = false;
+    public boolean highRung_isClicked = false;
+    public boolean midRung_isClicked = false;
+    public boolean lowRung_isClicked = false;
+    public boolean attempt_isClicked = false;
+    public boolean none_Clicked = false;
+    public boolean success_Clicked = false;
+    public boolean slow_Clicked = false;
+    public boolean medium_isClicked = false;
+    public boolean fast_isClicked = false;
     public boolean isClicked = false;
+
+    public SharedPreferences.Editor transversalEditor = sp.edit();
+    public SharedPreferences.Editor highRungEditor = sp.edit();
+    public SharedPreferences.Editor midRungEditor = sp.edit();
+    public SharedPreferences.Editor lowRungEditor = sp.edit();
+
+    public SharedPreferences.Editor noneEditor = sp.edit();
+    public SharedPreferences.Editor attemptEditor = sp.edit();
+    public SharedPreferences.Editor successEditor = sp.edit();
+
+    public SharedPreferences.Editor slowEditor = sp.edit();
+    public SharedPreferences.Editor mediumEditor = sp.edit();
+    public SharedPreferences.Editor fastEditor = sp.edit();
+
 
     @Override
     protected void onCreate (Bundle savedInstanceState) {
@@ -37,13 +66,14 @@ public class endgame extends MainActivity {
         transversalRung=findViewById(R.id.climb_traversal);
 
 
+        sp=getSharedPreferences("My Shared Prefs", Context.MODE_PRIVATE);
+
+
+
         goToQRCode.setOnClickListener(v ->{
-            Intent goToQRCode = new Intent(this, QRCode.class);
+            Intent goToQRCode = new Intent(this, auto_data_generator.class);
             startActivity(goToQRCode);
         });
-
-        mainActivityObj.goToTeleop();
-
 
 
         if (isClicked){
@@ -67,7 +97,7 @@ public class endgame extends MainActivity {
     }
 
     public void attemptBtn_isPressed () {
-        if (isClicked) {
+        if (attempt_isClicked) {
             noneBtn.setBackgroundColor(Color.RED);
             attempt.setBackgroundColor(Color.GREEN);
             success.setBackgroundColor(Color.RED);
@@ -77,7 +107,7 @@ public class endgame extends MainActivity {
     }
 
     public void successBtn_isPressed () {
-        if (isClicked) {
+        if (success_Clicked) {
             noneBtn.setBackgroundColor(Color.RED);
             attempt.setBackgroundColor(Color.RED);
             success.setBackgroundColor(Color.GREEN);
@@ -87,7 +117,7 @@ public class endgame extends MainActivity {
     }
 
     public void lowRung_isPressed () {
-        if (isClicked) {
+        if (lowRung_isClicked) {
             lowRung.setBackgroundColor(Color.GREEN);
             midRung.setBackgroundColor(Color.RED);
             highRung.setBackgroundColor(Color.RED);
@@ -98,7 +128,7 @@ public class endgame extends MainActivity {
     }
 
     public void midRung_isPressed () {
-        if (isClicked) {
+        if (medium_isClicked) {
             midRung.setBackgroundColor(Color.GREEN);
             lowRung.setBackgroundColor(Color.RED);
             highRung.setBackgroundColor(Color.RED);
@@ -109,7 +139,7 @@ public class endgame extends MainActivity {
     }
 
     public void HighRung_isPressed () {
-        if (isClicked) {
+        if (highRung_isClicked) {
             highRung.setBackgroundColor(Color.RED);
             midRung.setBackgroundColor(Color.RED);
             lowRung.setBackgroundColor(Color.GREEN);
@@ -120,7 +150,7 @@ public class endgame extends MainActivity {
     }
 
     public void transversalRung_IsPressed () {
-        if (isClicked) {
+        if (taversal_isClicked) {
             transversalRung.setBackgroundColor(Color.RED);
             highRung.setBackgroundColor(Color.RED);
             midRung.setBackgroundColor(Color.RED);

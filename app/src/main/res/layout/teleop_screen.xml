@@ -6,6 +6,11 @@
     android:layout_height="match_parent"
     tools:context="scoutingapp.autoscreen.MainActivity">
 
+    <fragment
+        android:id="@+id/fragments"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
     <ImageView
         android:id="@+id/timerPng"
         android:layout_width="41dp"
@@ -97,7 +102,7 @@
         app:layout_constraintVertical_bias="0.28" />
 
     <TextView
-        android:id="@+id/teleop_txt"
+        android:id="@+id/endgame_txt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Teleop"
@@ -125,7 +130,7 @@
         app:layout_constraintBottom_toTopOf="@+id/linearLayout"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.537"
-        app:layout_constraintStart_toEndOf="@+id/teleop_txt"
+        app:layout_constraintStart_toEndOf="@+id/endgame_txt"
         app:layout_constraintTop_toBottomOf="@+id/matchTimer"
         app:layout_constraintVertical_bias="1.0"
         tools:ignore="SpeakableTextPresentCheck" />
@@ -351,7 +356,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="go to auto"
-        app:layout_constraintBottom_toTopOf="@+id/teleop_txt"
+        app:layout_constraintBottom_toTopOf="@+id/endgame_txt"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/matchTimer" />
 

@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     package="com.example.scoutingapp">
 
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -15,10 +14,16 @@
             android:name="scoutingapp.select_board"
             android:exported="false" />
         <activity
-            android:name="scoutingapp.qr_code"
+            android:name="scoutingapp.endgame.endgame"
+            android:exported="false" />
+        <activity
+            android:name="scoutingapp.auto_data_generator"
             android:exported="false" />
         <activity
             android:name="scoutingapp.CommentActivity"
+            android:exported="false" />
+        <activity
+            android:name="scoutingapp.teleop_screen.teleop"
             android:exported="false" />
         <activity
             android:name="scoutingapp.autoscreen.MainActivity"
@@ -29,6 +34,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name="scoutingapp.robotHitMiss" />
     </application>
 
 </manifest>

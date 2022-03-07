@@ -8,7 +8,6 @@ import android.widget.ImageButton;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
-
 import com.example.scoutingapp.R;
 
 import scoutingapp.autoscreen.MainActivity;
@@ -20,15 +19,16 @@ public class timer extends MainActivity {
     Button startTimer;
     ImageButton pauseTimer;
 
-
     public boolean isTimerRunning = false;
+    public boolean isTimerButtonPressed = false;
+    public boolean isPauseButtonPressed = false;
 
     public long timeLeftInMilliseconds = 165000;
     CountDownTimer countDownTimer;
 
-    public int timeLeft = (int) (timeLeftInMilliseconds) / 1000;
+    private final int timeLeft = (int) (timeLeftInMilliseconds) / 1000;
 
-    public int progressTime = 165 - timeLeft ;
+    private final int progressTime = 165 - timeLeft ;
 
     public String TimeToString = Integer.toString(progressTime);
 
@@ -38,10 +38,10 @@ public class timer extends MainActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.auto_screen);
 
-        matchTimer = findViewById(R.id.matchTimer);
-        timer_txt = findViewById(R.id.timerTxt);
-        startTimer = findViewById(R.id.startMatchTimer);
-        pauseTimer = findViewById(R.id.pauseBtn);
+        matchTimer=findViewById(R.id.matchTimer);
+        timer_txt=findViewById(R.id.timerTxt);
+        startTimer=findViewById(R.id.startMatchTimer);
+        pauseTimer=findViewById(R.id.pauseBtn);
 
 
         //code for the Timer
@@ -50,6 +50,10 @@ public class timer extends MainActivity {
 
         timer_txt.setText("0");
 
+
+    }
+    public void startTimer() {
+        isTimerButtonPressed = true;
         startTimer.setOnClickListener(v -> {
             if (isTimerRunning) {
                 pauseTimer();
@@ -59,10 +63,8 @@ public class timer extends MainActivity {
 
         });
         pauseTimer.setOnClickListener(v -> pauseTimer());
-    }
 
-    public void startTimer() {
-        countDownTimer = new CountDownTimer(timeLeftInMilliseconds, 1000) {
+    countDownTimer = new CountDownTimer(timeLeftInMilliseconds, 1000) {
             @Override
             public void onTick(long millisUntilFinished) {
                 timeLeftInMilliseconds = millisUntilFinished;
@@ -87,6 +89,8 @@ public class timer extends MainActivity {
     public void pauseTimer() {
         countDownTimer.cancel();
         isTimerRunning = false;
+        isTimerButtonPressed = false;
+        isPauseButtonPressed = true;
         startTimer.setVisibility(View.VISIBLE);
         pauseTimer.setVisibility(View.INVISIBLE);
         undoButton.setVisibility(View.INVISIBLE);

@@ -10,20 +10,20 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.scoutingapp.R;
 
-import scoutingapp.autoscreen.MainActivity;
-import scoutingapp.autoscreen.robotHitMiss;
+import scoutingapp.endgame.endgame;
 import scoutingapp.teleop_screen.defending;
 import scoutingapp.teleop_screen.fouls;
 
-public class qr_code extends AppCompatActivity {
+public class auto_data_generator extends AppCompatActivity {
 
     Button matchover;
-    public final MainActivity mainActivityObj = new MainActivity();
     public final robotHitMiss robotHitMissObj = new robotHitMiss();
     public defending defendingObj = new defending();
     public final fouls foulsObj = new fouls();
     public final select_board select_boardObj = new select_board();
     public final CommentActivity commentActivityObj = new CommentActivity();
+    public final endgame endgameObj = new endgame();
+
 
 
 
@@ -31,8 +31,6 @@ public class qr_code extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_qr_code);
-
-
 
         matchover=findViewById(R.id.matchOver);
 
@@ -42,6 +40,12 @@ public class qr_code extends AppCompatActivity {
         sp=getSharedPreferences("My Shared Prefs", Context.MODE_PRIVATE);
 
         matchover.setOnClickListener(v -> {
+
+            SharedPreferences.Editor robotDisabledEditor = sp.edit();
+            SharedPreferences.Editor robotIncapacitatedEditor = sp.edit();
+            SharedPreferences.Editor entryStaredLateEditor = sp.edit();
+            SharedPreferences.Editor reScoutRequiredEditor = sp.edit();
+
 
 
             SharedPreferences.Editor autoHighHitEditor=sp.edit();
@@ -74,10 +78,26 @@ public class qr_code extends AppCompatActivity {
             boardEditor.putString("b2", String.valueOf(select_boardObj.b2IsPressed));
             boardEditor.putString("b3", String.valueOf(select_boardObj.b3IsPressed));
 
-            commentActivityObj.robotDisabledEditor.putString("is Pressed", String.valueOf(commentActivityObj.robot_disabled_isPressed));
-            commentActivityObj.robotIncapacitatedEditor.putString("is Pressed", String.valueOf(commentActivityObj.robot_incapacitated_isPressed));
-            commentActivityObj.entryStaredLateEditor.putString("is Pressed", String.valueOf(commentActivityObj.entry_isPressed));
-            commentActivityObj.reScoutRequiredEditor.putString("is Pressed", String.valueOf(commentActivityObj.rescout_required_isPressed));
+            robotDisabledEditor.putString("is Pressed", String.valueOf(commentActivityObj.robot_disabled_isPressed));
+            robotIncapacitatedEditor.putString("is Pressed", String.valueOf(commentActivityObj.robot_incapacitated_isPressed));
+            entryStaredLateEditor.putString("is Pressed", String.valueOf(commentActivityObj.entry_isPressed));
+            reScoutRequiredEditor.putString("is Pressed", String.valueOf(commentActivityObj.rescout_required_isPressed));
+
+
+            endgameObj.transversalEditor.putString("is Pressed", String.valueOf(endgameObj.taversal_isClicked));
+            endgameObj.highRungEditor.putString("Is Pressed", String.valueOf(endgameObj.highRung_isClicked));
+            endgameObj.midRungEditor.putString("Is Pressed", String.valueOf(endgameObj.midRung_isClicked));
+            endgameObj.lowRungEditor.putString("Is Pressed", String.valueOf(endgameObj.lowRung_isClicked));
+
+            endgameObj.attemptEditor.putString("Is Pressed", String.valueOf(endgameObj.attempt_isClicked));
+            endgameObj.noneEditor.putString("Is Pressed", String.valueOf(endgameObj.none_Clicked));
+            endgameObj.successEditor.putString("Is Pressed", String.valueOf(endgameObj.success_Clicked));
+
+            endgameObj.slowEditor.putString("Is Pressed", String.valueOf(endgameObj.slow_Clicked));
+            endgameObj.mediumEditor.putString("Is Pressed", String.valueOf(endgameObj.medium_isClicked));
+            endgameObj.fastEditor.putString("Is Pressed", String.valueOf(endgameObj.fast_isClicked));
+
+
 
 
         });
