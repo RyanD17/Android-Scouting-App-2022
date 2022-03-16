@@ -8,9 +8,11 @@ import android.widget.ImageButton;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
-import com.example.scoutingapp.autoscreen.MainActivity;
+import androidx.appcompat.app.AppCompatActivity;
 
-public class timer extends MainActivity {
+import com.example.scoutingapp.autoscreen.robotHitMiss;
+
+public class timer extends AppCompatActivity {
 
     ProgressBar matchTimer;
     TextView timer_txt;
@@ -19,6 +21,8 @@ public class timer extends MainActivity {
 
 
     public boolean isTimerRunning = false;
+
+    robotHitMiss robotHitMissObj = new robotHitMiss();
 
     public long timeLeftInMilliseconds = 165000;
     CountDownTimer countDownTimer;
@@ -79,14 +83,14 @@ public class timer extends MainActivity {
 
         startTimer.setVisibility(View.INVISIBLE);
         pauseTimer.setVisibility(View.VISIBLE);
-        undoButton.setVisibility(View.VISIBLE);
+        robotHitMissObj.undoButton.setVisibility(View.VISIBLE);
     }
     public void pauseTimer() {
         countDownTimer.cancel();
         isTimerRunning = false;
         startTimer.setVisibility(View.VISIBLE);
         pauseTimer.setVisibility(View.INVISIBLE);
-        undoButton.setVisibility(View.INVISIBLE);
+        robotHitMissObj.undoButton.setVisibility(View.INVISIBLE);
         updateCountDownText();
     }
 

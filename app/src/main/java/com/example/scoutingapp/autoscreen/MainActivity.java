@@ -1,27 +1,30 @@
 package com.example.scoutingapp.autoscreen;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.MotionEvent;
-import android.view.View;
+import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.TextView;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.scoutingapp.CommentActivity;
 import com.example.scoutingapp.R;
-import com.example.scoutingapp.teleop_screen.teleop;
 
 
-public class MainActivity<data> extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity {
+
+    robotHitMiss robotHitMissObj = new robotHitMiss();
+
+    public Button autoHighMissBtn, autoHighHitBtn, autoLowMissBtn, autoLowHitBtn;
+    public TextView autoHighMissBtnCount, autoHighHitBtnCount, autoLowMissTxt, autoLowHitTxt;
 
     public ImageButton undoButton;
     public ImageButton commentButton;
 
+    public int autoHighMissCount = 0, autoHighHitCount = 0, autoLowMissCount = 0 , autoLowHitCount = 0;
+    public boolean autoHighHit_isClicked = false, autoHighMiss_isClicked = false, autoLowHit_isClicked = false, autoLowMiss_isClicked = false;
 
-
-    public robotHitMiss robotHitMissObj = new robotHitMiss();
-    float x1, x2, y1, y2;
 
     @Override
     protected void onCreate (Bundle savedInstanceState) {
@@ -29,72 +32,24 @@ public class MainActivity<data> extends AppCompatActivity {
         setContentView(R.layout.auto_screen);
 
         //initializing variables
-        undoButton=findViewById(R.id.undoButton);
-        commentButton=findViewById(R.id.commentBtn);
+        autoHighMissBtn=findViewById(R.id.autoHighMiss);
+        autoHighMissBtnCount=findViewById(R.id.autoHighMissCount);
+        autoHighHitBtn=findViewById(R.id.autoHighHit);
+        autoHighHitBtnCount=findViewById(R.id.autoHighHitCount);
+        autoLowMissBtn=findViewById(R.id.autoLowMiss);
+        autoLowMissTxt=findViewById(R.id.autoLowMissCount);
+        autoLowHitBtn=findViewById(R.id.autoLowHit);
+        autoLowHitTxt=findViewById(R.id.autoLowHitCount);
+
+        //calling each method inside of robotHitMiss
+        robotHitMissObj.autoHighMiss_isPressed();
+        robotHitMissObj.autoLowMiss_isPressed();
+        robotHitMissObj.autoHighHit_isPressed();
+        robotHitMissObj.autoLowHit_isPressed();
 
         commentButton.setOnClickListener(v -> {
-            Intent intent=new Intent(this, com.example.scoutingapp.CommentActivity.class);
+            Intent intent = new Intent(this, CommentActivity.class);
             startActivity(intent);
         });
-
-
-
-    }
-
-    public boolean robotHitMiss_isClicked(){
-        if (robotHitMissObj.autoLowMiss_isClicked){
-            robotHitMissObj.autoLowMiss_isPressed();
-            return true;
-        }
-
-        else if (robotHitMissObj.autoLowHit_isClicked){
-            robotHitMissObj.autoLowHit_isPressed();
-            return true;
-        }
-
-        else if (robotHitMissObj.autoHighHit_isClicked){
-            robotHitMissObj.autoHighHit_isPressed();
-            return true;
-        }
-        else if (robotHitMissObj.autoHighMiss_isClicked){
-            robotHitMissObj.autoHighMiss_isPressed();
-        }
-
-        else if (robotHitMissObj.LowMiss_isClicked){
-            robotHitMissObj.LowMiss_isPressed();
-            return true;
-        }
-
-        else if (robotHitMissObj.LowHit_isClicked){
-            robotHitMissObj.LowHit_isPressed();
-            return true;
-        }
-
-        else if (robotHitMissObj.HighHit_isClicked){
-            robotHitMissObj.autoHighHit_isPressed();
-            return true;
-        }
-        else if (robotHitMissObj.HighMiss_isClicked){
-            robotHitMissObj.HighMiss_isPressed();
-        }
-        return false;
-    }
-
-    public boolean onTouchEvent (MotionEvent touchEvent) {
-        switch (touchEvent.getAction()) {
-            case MotionEvent.ACTION_DOWN:
-                x1=touchEvent.getX();
-                y1=touchEvent.getY();
-                break;
-            case MotionEvent.ACTION_UP:
-                x2=touchEvent.getX();
-                y2=touchEvent.getY();
-                if (x1 < x2) {
-                    Intent intent=new Intent(MainActivity.this, teleop.class);
-                    startActivity(intent);
-                }
-                break;
-        }
-        return false;
     }
 }

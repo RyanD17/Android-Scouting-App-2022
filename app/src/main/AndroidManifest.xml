@@ -2,7 +2,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.scoutingapp">
 
-
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -11,22 +10,22 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Scoutingapp2022">
         <activity
-            android:name="scoutingapp.select_board"
+            android:name=".select_board"
             android:exported="false" />
         <activity
-            android:name="scoutingapp.endgame.endgame"
+            android:name=".endgame.endgame"
             android:exported="false" />
         <activity
-            android:name="scoutingapp.auto_data_generator"
+            android:name=".auto_data_generator"
             android:exported="false" />
         <activity
-            android:name="scoutingapp.CommentActivity"
+            android:name=".CommentActivity"
             android:exported="false" />
         <activity
-            android:name="scoutingapp.teleop_screen.teleop"
+            android:name=".teleop_screen.teleop"
             android:exported="false" />
         <activity
-            android:name="scoutingapp.autoscreen.MainActivity"
+            android:name=".autoscreen.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
@@ -10,6 +11,8 @@
         android:layout_height="match_parent"
         android:orientation="vertical"
         android:weightSum="10"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
         <TableRow
@@ -56,13 +59,14 @@
 
                 <TextView
                     android:id="@+id/scout_name"
-                    android:layout_width="157dp"
+                    android:layout_width="189dp"
                     android:layout_height="wrap_content"
                     android:editable="true"
                     android:gravity="center"
                     android:hint="D.Joe"
                     android:minHeight="48dp"
-                    android:textSize="20sp" />
+                    android:textSize="20sp"
+                    tools:ignore="Deprecated,TextViewEdits" />
             </FrameLayout>
 
         </TableRow>
@@ -120,10 +124,10 @@
 
                                 <TextView
                                     android:id="@+id/teamBlue1"
-                                    android:textSize="20sp"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:text="TextView" />
+                                    android:text="TextView"
+                                    android:textSize="20sp" />
                             </TableRow>
 
                             <TableRow
@@ -150,10 +154,10 @@
 
                                 <TextView
                                     android:id="@+id/teamRed2"
-                                    android:textSize="20sp"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:text="TextView" />
+                                    android:text="TextView"
+                                    android:textSize="20sp" />
                             </TableRow>
 
                             <TableRow
@@ -163,10 +167,10 @@
 
                                 <TextView
                                     android:id="@+id/teamBlue2"
-                                    android:textSize="20sp"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:text="TextView" />
+                                    android:text="TextView"
+                                    android:textSize="20sp" />
                             </TableRow>
 
                             <TableRow
@@ -187,10 +191,10 @@
 
                             <TextView
                                 android:id="@+id/teamRed3"
-                                android:textSize="20sp"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="TextView" />
+                                android:text="TextView"
+                                android:textSize="20sp" />
                         </TableRow>
 
                         <TableRow
@@ -200,27 +204,18 @@
 
                             <TextView
                                 android:id="@+id/teamBlue3"
-                                android:textSize="20sp"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="TextView" />
+                                android:text="TextView"
+                                android:textSize="20sp" />
 
                         </TableRow>
 
                     </TableLayout>
                 </LinearLayout>
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="horizontal"
-                    android:weightSum="7">
-
-                </LinearLayout>
-
             </LinearLayout>
         </TableRow>
-
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

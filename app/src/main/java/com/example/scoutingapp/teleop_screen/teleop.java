@@ -1,58 +1,49 @@
 package com.example.scoutingapp.teleop_screen;
 
-import android.content.Intent;
 import android.os.Bundle;
-import android.os.CountDownTimer;
-import android.view.MotionEvent;
-import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
-import android.widget.ProgressBar;
 import android.widget.TextView;
 
-import com.example.scoutingapp.CommentActivity;
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.example.scoutingapp.R;
-import com.example.scoutingapp.autoscreen.MainActivity;
-import com.example.scoutingapp.autoscreen.robotHitMiss;
 import com.example.scoutingapp.timer;
 
-public class teleop extends MainActivity {
+public class teleop extends AppCompatActivity {
 
     //creating variables and objects
-
     public timer timerObj = new timer();
-    public MainActivity mainActivityObj=new MainActivity();
-    public robotHitMiss robotHitMissObj = new robotHitMiss();
+    public robotHitMissTeleop robotHitMissTeleopObj = new robotHitMissTeleop();
 
-    private float x1, x2, y1, y2;
+    Button HighMissBtn, HighHitBtn, LowMissBtn, LowHitBtn;
+    TextView HighMissBtnCount, HighHitBtnCount, LowMissTxt, LowHitTxt;
 
+    public int HighMissCount, HighHitCount, LowMissCount, LowHitCount;
+    public boolean HighHit_isClicked, LowHit_isClicked, HighMiss_isClicked, LowMiss_isClicked;
+
+    public ImageButton undoButton;
+    public ImageButton commentButton;
 
     @Override
     protected void onCreate (Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.teleop_screen);
 
-    }
+        HighMissBtn=findViewById(R.id.highMiss);
+        HighMissBtnCount=findViewById(R.id.highMiss_txt);
+        HighHitBtn=findViewById(R.id.highHit);
+        HighHitBtnCount=findViewById(R.id.highHit_txt);
+        LowMissBtn=findViewById(R.id.lowMiss);
+        LowMissTxt=findViewById(R.id.lowMiss_txt);
+        LowHitBtn=findViewById(R.id.lowHit);
+        LowHitTxt=findViewById(R.id.lowHit_txt);
+        undoButton=findViewById(R.id.undoButton);
+        commentButton=findViewById(R.id.commentBtn);
 
-    public boolean onTouchEvent (MotionEvent touchEvent) {
-        switch (touchEvent.getAction()) {
-            case MotionEvent.ACTION_DOWN:
-                x1=touchEvent.getX();
-                y1=touchEvent.getY();
-                break;
-            case MotionEvent.ACTION_UP:
-                x2=touchEvent.getX();
-                y2=touchEvent.getY();
-                if (x1 < x2) {
-                    Intent intent = new Intent(teleop.this, com.example.scoutingapp.endgame.endgame.class);
-                    startActivity(intent);
-                }
-                else if (x2 >  x1){
-                    Intent intent = new Intent(teleop.this, MainActivity.class);
-                    startActivity(intent);
-                }
-                break;
-        }
-        return false;
+        robotHitMissTeleopObj.HighMiss_isPressed();
+        robotHitMissTeleopObj.LowMiss_isPressed();
+        robotHitMissTeleopObj.HighHit_isPressed();
+        robotHitMissTeleopObj.LowHit_isPressed();
     }
 }

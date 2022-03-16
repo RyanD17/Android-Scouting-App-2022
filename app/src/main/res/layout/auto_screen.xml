@@ -6,11 +6,6 @@
     android:layout_height="match_parent"
     tools:context=".autoscreen.MainActivity">
 
-    <fragment
-        android:id="@+id/fragments"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent" />
-
     <ImageView
         android:id="@+id/timerPng"
         android:layout_width="41dp"
@@ -176,15 +171,26 @@
             android:layout_weight="1"
             android:orientation="horizontal">
 
+            <Button
+                android:id="@+id/goToTeleop2"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="Go To Teleop"
+                app:layout_constraintBottom_toTopOf="@+id/endgame_txt"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/matchTimer" />
+
             <CheckBox
                 android:id="@+id/taxi"
-                android:layout_width="wrap_content"
+                android:layout_width="170dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:background="@color/purple_500"
                 android:text="TAXI"
                 android:textColor="@android:color/white"
                 android:textSize="20dp" />
+
         </LinearLayout>
 
         <LinearLayout

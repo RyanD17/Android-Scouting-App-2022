@@ -6,99 +6,6 @@
     android:layout_height="match_parent"
     tools:context="scoutingapp.endgame.endgame">
 
-    <fragment
-        android:id="@+id/fragments"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent" />
-
-    <ImageView
-        android:id="@+id/timerPng"
-        android:layout_width="41dp"
-        android:layout_height="17dp"
-        android:layout_marginBottom="112dp"
-        app:layout_constraintBottom_toTopOf="@+id/matchTimer"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.845"
-        app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@drawable/ic_timer_small" />
-
-    <ImageView
-        android:id="@+id/teamPNG"
-        android:layout_width="41dp"
-        android:layout_height="17dp"
-        android:layout_marginEnd="56dp"
-        android:layout_marginBottom="120dp"
-        app:layout_constraintBottom_toTopOf="@+id/matchTimer"
-        app:layout_constraintEnd_toStartOf="@+id/timerPng"
-        app:srcCompat="@drawable/ic_people_small" />
-
-    <ImageView
-        android:id="@+id/layerPNG"
-        android:layout_width="41dp"
-        android:layout_height="17dp"
-        android:layout_marginStart="8dp"
-        app:layout_constraintBottom_toTopOf="@+id/matchTimer"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.648"
-        app:srcCompat="@drawable/ic_layers_small" />
-
-    <TextView
-        android:id="@+id/matchNumber"
-        android:layout_width="wrap_content"
-        android:layout_height="17dp"
-        android:layout_marginEnd="152dp"
-        android:text="TextView"
-        app:layout_constraintBottom_toTopOf="@+id/matchTimer"
-        app:layout_constraintEnd_toStartOf="@+id/teamPNG"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.867" />
-
-    <ImageView
-        android:id="@+id/boardPNG"
-        android:layout_width="wrap_content"
-        android:layout_height="17dp"
-        app:layout_constraintBottom_toTopOf="@+id/matchTimer"
-        app:layout_constraintEnd_toStartOf="@+id/boardTxt"
-        app:layout_constraintHorizontal_bias="0.388"
-        app:layout_constraintStart_toEndOf="@+id/matchNumber"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.648"
-        app:srcCompat="@android:drawable/ic_input_get" />
-
-    <TextView
-        android:id="@+id/boardTxt"
-        android:layout_width="wrap_content"
-        android:layout_height="17dp"
-        android:layout_marginEnd="48dp"
-        android:text="TextView"
-        app:layout_constraintBottom_toTopOf="@+id/matchTimer"
-        app:layout_constraintEnd_toStartOf="@+id/teamPNG"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.648" />
-
-    <TextView
-        android:id="@+id/teamNumber"
-        android:layout_width="wrap_content"
-        android:layout_height="17dp"
-        android:text="TextView"
-        app:layout_constraintBottom_toTopOf="@+id/matchTimer"
-        app:layout_constraintEnd_toEndOf="@+id/teamPNG"
-        app:layout_constraintStart_toStartOf="@+id/teamPNG"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.367" />
-
-    <TextView
-        android:id="@+id/timerTxt"
-        android:layout_width="wrap_content"
-        android:layout_height="17dp"
-        android:layout_marginEnd="40dp"
-        android:text="TextView"
-        app:layout_constraintBottom_toTopOf="@+id/matchTimer"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.367" />
-
     <TextView
         android:id="@+id/endgame_txt"
         android:layout_width="wrap_content"
@@ -115,10 +22,10 @@
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toTopOf="@+id/linearLayout"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.547" />
+        app:layout_constraintVertical_bias="0.185" />
 
     <Button
         android:id="@+id/startMatchTimer"
@@ -187,8 +94,8 @@
 
     <LinearLayout
         android:id="@+id/linearLayout"
-        android:layout_width="match_parent"
-        android:layout_height="450dp"
+        android:layout_width="409dp"
+        android:layout_height="344dp"
         android:orientation="vertical"
         android:weightSum="3"
         app:layout_constraintBottom_toBottomOf="parent"

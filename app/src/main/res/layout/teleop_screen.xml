@@ -4,12 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="scoutingapp.autoscreen.MainActivity">
-
-    <fragment
-        android:id="@+id/fragments"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+    tools:context=".autoscreen.MainActivity">
 
     <ImageView
         android:id="@+id/timerPng"
@@ -117,10 +112,10 @@
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toTopOf="@+id/linearLayout"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.547" />
+        app:layout_constraintVertical_bias="0.442" />
 
     <Button
         android:id="@+id/startMatchTimer"
@@ -160,8 +155,8 @@
 
     <LinearLayout
         android:id="@+id/linearLayout"
-        android:layout_width="match_parent"
-        android:layout_height="450dp"
+        android:layout_width="409dp"
+        android:layout_height="358dp"
         android:orientation="vertical"
         android:weightSum="3"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -247,7 +242,7 @@
                 android:layout_weight="1">
 
                 <TextView
-                    android:id="@+id/lowhit_txt"
+                    android:id="@+id/lowHit_txt"
                     android:layout_width="32dp"
                     android:layout_height="45dp"
                     android:elevation="10dp"
@@ -269,7 +264,7 @@
                 android:layout_weight="1">
 
                 <TextView
-                    android:id="@+id/highhit_txt"
+                    android:id="@+id/highHit_txt"
                     android:layout_width="32dp"
                     android:layout_height="45dp"
                     android:elevation="10dp"
@@ -320,7 +315,7 @@
                 android:layout_weight="1">
 
                 <TextView
-                    android:id="@+id/lowHit_txt"
+                    android:id="@+id/highMiss_txt"
                     android:layout_width="32dp"
                     android:layout_height="45dp"
                     android:elevation="10dp"
