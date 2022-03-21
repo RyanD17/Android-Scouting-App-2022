@@ -7,11 +7,9 @@ import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.TextView;
 
-import com.example.scoutingapp.autoscreen.MainActivity;
+import androidx.appcompat.app.AppCompatActivity;
 
-import java.util.ArrayList;
-
-public class CommentActivity extends MainActivity {
+public class CommentActivity extends AppCompatActivity {
 
     public CheckBox robot_disabled;
     public CheckBox robot_incapacitated;

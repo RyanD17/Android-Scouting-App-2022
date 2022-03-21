@@ -9,6 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Scoutingapp2022">
+
         <activity
             android:name=".select_board"
             android:exported="false" />
@@ -16,7 +17,7 @@
             android:name=".endgame.endgame"
             android:exported="false" />
         <activity
-            android:name=".auto_data_generator"
+            android:name=".qr_code"
             android:exported="false" />
         <activity
             android:name=".CommentActivity"

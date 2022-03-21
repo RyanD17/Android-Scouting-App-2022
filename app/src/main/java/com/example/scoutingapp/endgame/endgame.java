@@ -11,19 +11,16 @@ import android.widget.ToggleButton;
 import com.example.scoutingapp.R;
 import com.example.scoutingapp.autoscreen.MainActivity;
 import com.example.scoutingapp.qr_code;
+import com.example.scoutingapp.teleop_screen.teleop;
 
 
 public class endgame extends MainActivity {
 
     SharedPreferences sp;
-
-
-    //creating a new Main Activity Object
-    public  MainActivity mainActivityObj=new MainActivity();
     //initializing toggle buttons
     public ToggleButton noneBtn, attempt, success, lowRung, midRung, highRung, transversalRung;
 
-    public Button goToQRCode;
+    public Button goToQRCode, goToTeleop;
     public boolean taversal_isClicked = false;
     public boolean highRung_isClicked = false;
     public boolean midRung_isClicked = false;
@@ -34,26 +31,14 @@ public class endgame extends MainActivity {
     public boolean slow_Clicked = false;
     public boolean medium_isClicked = false;
     public boolean fast_isClicked = false;
-    public boolean isClicked = false;
 
-    public SharedPreferences.Editor transversalEditor = sp.edit();
-    public SharedPreferences.Editor highRungEditor = sp.edit();
-    public SharedPreferences.Editor midRungEditor = sp.edit();
-    public SharedPreferences.Editor lowRungEditor = sp.edit();
 
-    public SharedPreferences.Editor noneEditor = sp.edit();
-    public SharedPreferences.Editor attemptEditor = sp.edit();
-    public SharedPreferences.Editor successEditor = sp.edit();
-
-    public SharedPreferences.Editor slowEditor = sp.edit();
-    public SharedPreferences.Editor mediumEditor = sp.edit();
-    public SharedPreferences.Editor fastEditor = sp.edit();
 
 
     @Override
     protected void onCreate (Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.auto_screen);
+        setContentView(R.layout.endgame_screen);
 
         noneBtn=findViewById(R.id.climb_none);
         attempt=findViewById(R.id.climb_attempt);
@@ -63,27 +48,28 @@ public class endgame extends MainActivity {
         highRung=findViewById(R.id.climb_high);
         lowRung=findViewById(R.id.climb_low);
         transversalRung=findViewById(R.id.climb_traversal);
-
+        goToTeleop = findViewById(R.id.goToTeleop);
+        goToQRCode = findViewById(R.id.goToQRCode);
 
         sp=getSharedPreferences("My Shared Prefs", Context.MODE_PRIVATE);
 
+        noneBtn_isPressed();
+        attemptBtn_isPressed();
+        successBtn_isPressed();
+        lowRung_isPressed();
+        midRung_isPressed();
+        HighRung_isPressed();
+        transversalRung_IsPressed();
 
+        goToTeleop.setOnClickListener(v -> {
+            Intent teleopIntent = new Intent(endgame.this, teleop.class);
+            startActivity(teleopIntent);
+        });
 
         goToQRCode.setOnClickListener(v ->{
             Intent goToQRCode = new Intent(this, qr_code.class);
             startActivity(goToQRCode);
         });
-
-
-        if (isClicked){
-            noneBtn_isPressed();
-            attemptBtn_isPressed();
-            successBtn_isPressed();
-            lowRung_isPressed();
-            midRung_isPressed();
-            HighRung_isPressed();
-            transversalRung_IsPressed();
-        }
     }
 
     public void noneBtn_isPressed ()  {
@@ -101,7 +87,7 @@ public class endgame extends MainActivity {
             attempt.setBackgroundColor(Color.GREEN);
             success.setBackgroundColor(Color.RED);
         } else {
-            attempt.setBackgroundColor(Color.RED);
+             attempt.setBackgroundColor(Color.RED);
         }
     }
 

@@ -10,7 +10,7 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.scoutingapp.autoscreen.robotHitMiss;
+import com.example.scoutingapp.autoscreen.MainActivity;
 
 public class timer extends AppCompatActivity {
 
@@ -20,9 +20,8 @@ public class timer extends AppCompatActivity {
     ImageButton pauseTimer;
 
 
+    private MainActivity mainActivityObj = new MainActivity();
     public boolean isTimerRunning = false;
-
-    robotHitMiss robotHitMissObj = new robotHitMiss();
 
     public long timeLeftInMilliseconds = 165000;
     CountDownTimer countDownTimer;
@@ -83,14 +82,14 @@ public class timer extends AppCompatActivity {
 
         startTimer.setVisibility(View.INVISIBLE);
         pauseTimer.setVisibility(View.VISIBLE);
-        robotHitMissObj.undoButton.setVisibility(View.VISIBLE);
+        mainActivityObj.undoButton.setVisibility(View.VISIBLE);
     }
     public void pauseTimer() {
         countDownTimer.cancel();
         isTimerRunning = false;
         startTimer.setVisibility(View.VISIBLE);
         pauseTimer.setVisibility(View.INVISIBLE);
-        robotHitMissObj.undoButton.setVisibility(View.INVISIBLE);
+        mainActivityObj.undoButton.setVisibility(View.INVISIBLE);
         updateCountDownText();
     }
 
