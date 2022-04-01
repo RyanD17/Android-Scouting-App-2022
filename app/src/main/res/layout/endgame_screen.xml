@@ -225,21 +225,21 @@
             android:layout_weight="1"
             android:orientation="horizontal">
 
-            <Button
+            <ToggleButton
                 android:id="@+id/climb_slow"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:text="slow" />
 
-            <Button
+            <ToggleButton
                 android:id="@+id/climb_medum"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:text="medium" />
 
-            <Button
+            <ToggleButton
                 android:id="@+id/fast_climb"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"

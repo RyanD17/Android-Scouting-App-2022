@@ -50,12 +50,13 @@ public class MainActivity extends AppCompatActivity {
         undoButton = findViewById(R.id.undoButton);
         goToTeleop = findViewById(R.id.goToTeleop);
 
-
-        //calling each method inside of robotHitMiss
+         
         autoHighMiss_isPressed();
         autoLowMiss_isPressed();
         autoHighHit_isPressed();
         autoLowHit_isPressed();
+
+
 
         commentButton.setOnClickListener(v -> {
             Intent intent = new Intent(MainActivity.this, CommentActivity.class);

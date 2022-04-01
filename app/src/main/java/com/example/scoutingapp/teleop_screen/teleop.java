@@ -2,6 +2,7 @@ package com.example.scoutingapp.teleop_screen;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -31,8 +32,8 @@ public class teleop extends AppCompatActivity {
 
     private Button tech_foul;
     private TextView tech_foul_counter;
-    public  int foul_count;
-    public int tech_foul_count;
+    public  int foul_count = 0, defenceCount = 0;
+    public int tech_foul_count = 0;
 
 
     Button HighMissBtn, HighHitBtn, LowMissBtn, LowHitBtn, goToAuto, goToEndgame, startTimerBtn;
@@ -43,6 +44,9 @@ public class teleop extends AppCompatActivity {
 
     public ImageButton undoButton;
     public ImageButton commentButton;
+
+    public Button defense;
+    public boolean defending_isClicked = false;
 
     @Override
     protected void onCreate (Bundle savedInstanceState) {
@@ -60,6 +64,7 @@ public class teleop extends AppCompatActivity {
         startTimerBtn = findViewById(R.id.startMatchTimer);
         undoButton=findViewById(R.id.undoButton);
         commentButton=findViewById(R.id.commentBtn);
+        defense = findViewById(R.id.defending);
         foul = findViewById(R.id.foul);
         foul_counter = findViewById(R.id.foul_count);
         tech_foul = findViewById(R.id.tech_foul);
@@ -67,6 +72,7 @@ public class teleop extends AppCompatActivity {
         goToAuto =  findViewById(R.id.toAuto);
         goToEndgame = findViewById(R.id.toEndgame);
 
+        defenseBtn();
         foul_database();
         HighMiss_isPressed();
         LowMiss_isPressed();
@@ -95,6 +101,21 @@ public class teleop extends AppCompatActivity {
             }
         });
 
+    }
+    public void defenseBtn(){
+        defense.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick (View view) {
+                while (defending_isClicked){
+                    defending_isClicked = true;
+                    defense.setBackgroundColor(Color.GREEN);
+                    defenceCount ++;
+                }
+                defending_isClicked = false;
+                defenceCount += 0;
+                defense.setBackgroundColor(Color.RED);
+            }
+        });
     }
     public void undoOperationTeleop() {
         switch (stk.firstElement()) {
@@ -187,4 +208,5 @@ public class teleop extends AppCompatActivity {
             tech_foul_counter.setText(Integer.toString(tech_foul_count++));
         });
     }
+
 }

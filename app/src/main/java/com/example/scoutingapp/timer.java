@@ -14,13 +14,14 @@ import com.example.scoutingapp.autoscreen.MainActivity;
 
 public class timer extends AppCompatActivity {
 
-    ProgressBar matchTimer;
-    TextView timer_txt;
-    Button startTimer;
-    ImageButton pauseTimer;
+    public ProgressBar matchTimer;
+    public TextView timer_txt;
+    public Button startTimer;
+    public ImageButton pauseTimer;
 
 
-    private MainActivity mainActivityObj = new MainActivity();
+    public MainActivity mainActivityObj=new MainActivity();
+
     public boolean isTimerRunning = false;
 
     public long timeLeftInMilliseconds = 165000;

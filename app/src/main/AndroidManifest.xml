@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.scoutingapp">
 
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -10,6 +12,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Scoutingapp2022">
 
+        <activity android:name=".autoscreen.MainActivity"/>
         <activity
             android:name=".select_board"
             android:exported="false" />
@@ -26,7 +29,7 @@
             android:name=".teleop_screen.teleop"
             android:exported="false" />
         <activity
-            android:name=".autoscreen.MainActivity"
+            android:name=".matchRow"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -36,5 +39,4 @@
         </activity>
         <activity android:name="scoutingapp.robotHitMiss" />
     </application>
-
 </manifest>
