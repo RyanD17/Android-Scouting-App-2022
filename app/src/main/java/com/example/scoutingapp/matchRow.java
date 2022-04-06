@@ -11,6 +11,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.scoutingapp.autoscreen.MainActivity;
 
+import java.util.ArrayList;
+
 public class matchRow extends AppCompatActivity {
 
         private CheckBox r1;
@@ -25,6 +27,8 @@ public class matchRow extends AppCompatActivity {
         public boolean isB1Pressed = false;
         public boolean isB2Pressed = false;
         public boolean isB3Pressed = false;
+
+        ArrayList<String> teamNum = new ArrayList<>();
 
 
         @SuppressLint("WrongViewCast")
@@ -44,6 +48,18 @@ public class matchRow extends AppCompatActivity {
             B1 = findViewById(R.id.teamBlue1);
             B2 = findViewById(R.id.teamBlue2);
             B3 = findViewById(R.id.teamBlue3);
+
+            teamNum.add("865");
+            teamNum.add("1325");
+            teamNum.add("1114");
+            teamNum.add("2200");
+            teamNum.add("4476");
+
+
+            R1.setText(teamNum.get(0));
+            R2.setText(teamNum.get(1));
+            R2.setText(teamNum.get(2));
+            R3.setText(teamNum.get(3));
 
 
             r1.setOnClickListener(v -> {

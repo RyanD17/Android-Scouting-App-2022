@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
+import android.widget.ToggleButton;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -15,26 +16,21 @@ import com.example.scoutingapp.CommentActivity;
 import com.example.scoutingapp.R;
 import com.example.scoutingapp.autoscreen.MainActivity;
 import com.example.scoutingapp.endgame.endgame;
-import com.example.scoutingapp.timer;
+
+import org.apache.commons.lang3.time.StopWatch;
 
 import java.util.Stack;
+
 
 public class teleop extends AppCompatActivity {
 
     //creating variables and objects
-    public timer timerObj = new timer();
-
-
     public Stack<Integer> stk = new Stack<>();
 
-    private Button foul;//creating a new button with the name foul
-    private TextView foul_counter;
+    private Button foul, tech_foul;//creating a new button with the name foul
 
-    private Button tech_foul;
-    private TextView tech_foul_counter;
-    public  int foul_count = 0, defenceCount = 0;
-    public int tech_foul_count = 0;
-
+    private TextView tech_foul_counter, foul_counter;
+    public  int foul_count = 0, tech_foul_count = 0;
 
     Button HighMissBtn, HighHitBtn, LowMissBtn, LowHitBtn, goToAuto, goToEndgame, startTimerBtn;
     TextView HighMissBtnCount, HighHitBtnCount, LowMissTxt, LowHitTxt;
@@ -45,8 +41,10 @@ public class teleop extends AppCompatActivity {
     public ImageButton undoButton;
     public ImageButton commentButton;
 
-    public Button defense;
+    public ToggleButton defense;
     public boolean defending_isClicked = false;
+
+    public StopWatch stopwatch = new StopWatch();
 
     @Override
     protected void onCreate (Bundle savedInstanceState) {
@@ -82,8 +80,8 @@ public class teleop extends AppCompatActivity {
         goToAuto.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick (View view) {
-                Intent autoIntent = new Intent(teleop.this, MainActivity.class);
-                startActivity(autoIntent);
+                Intent Intent = new Intent(teleop.this, MainActivity.class);
+                startActivity(Intent);
             }
         });
         goToEndgame.setOnClickListener(new View.OnClickListener() {
@@ -102,50 +100,90 @@ public class teleop extends AppCompatActivity {
         });
 
     }
+    /*
+    public void undoOperationTeleop() {
+        if (stk.firstElement() == HighHitCount){
+            HighHitUndo();
+        }
+        else if (stk.firstElement() == LowHitCount){
+            LowHitUndo();
+        }
+        else if (stk.firstElement() == LowMissCount){
+            LowMissUndo();
+        }
+        else if (stk.firstElement() == HighMissCount){
+            HighMissUndo();
+        }
+        else if (stk.firstElement() == foul_count){
+            foulUndo();
+        }
+        else if (stk.firstElement() == tech_foul_count){
+            techFoulUndo();
+        }
+    }
+
+    private void foulUndo () {
+        stk.push(foul_count);
+        if (stk.firstElement() == foul_count){
+            foul.setText(Integer.toString(foul_count-= 1));
+        }
+        stk.pop();
+    }
+
+    private void techFoulUndo(){
+        stk.push(tech_foul_count);
+        if (stk.firstElement() == tech_foul_count){
+            tech_foul.setText(Integer.toString(tech_foul_count -= 1));
+        }
+    }
+
+    private void LowHitUndo () {
+        stk.push(LowHitCount);
+        if (stk.firstElement() == LowHitCount){
+            LowHitBtn.setText(Integer.toString(LowHitCount -= 1));
+        }
+        stk.pop();
+    }
+
+    private void HighHitUndo () {
+        stk.push(HighHitCount);
+        if (stk.firstElement() == HighHitCount){
+            HighHitBtn.setText(Integer.toString(HighHitCount -= 1));
+        }
+        stk.pop();
+    }
+    private void LowMissUndo(){
+        stk.push(LowMissCount);
+        if (stk.firstElement() == LowMissCount){
+            LowMissBtn.setText(Integer.toString(LowMissCount -= 1));
+        }
+        stk.pop();
+
+    }
+    private void HighMissUndo(){
+        stk.push(HighMissCount);
+        if (stk.firstElement() == HighMissCount){
+            HighMissBtn.setText(Integer.toString(HighMissCount -= 1));
+        }
+        stk.pop();
+    } */
+
     public void defenseBtn(){
         defense.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick (View view) {
-                while (defending_isClicked){
-                    defending_isClicked = true;
-                    defense.setBackgroundColor(Color.GREEN);
-                    defenceCount ++;
-                }
-                defending_isClicked = false;
-                defenceCount += 0;
-                defense.setBackgroundColor(Color.RED);
+                if (stopwatch != null)
+                defending_isClicked = true;
+                defense.setBackgroundColor(Color.GREEN);
+                stopwatch.start();
+
             }
         });
+        defending_isClicked = false;
+        stopwatch.stop();
+        defense.setBackgroundColor(Color.RED);
     }
-    public void undoOperationTeleop() {
-        switch (stk.firstElement()) {
-            case 1:
-                stk.push(LowMissCount);
-                while (stk.firstElement() == LowMissCount) {
-                    LowMissTxt.setText(Integer.toString(LowMissCount-=1));
-                }
-                stk.pop();
-            case 3:
-                stk.push(HighMissCount);
-                while (stk.firstElement() == HighMissCount) {
-                    HighMissBtnCount.setText(Integer.toString(HighMissCount-=1));
-                }
-                stk.pop();
-            case 4:
-                stk.push(LowHitCount);
-                while (stk.firstElement() == LowHitCount) {
-                    LowHitTxt.setText(Integer.toString(LowHitCount-=1));
-                }
-                stk.pop();
-            case 5:
-                Stack<Integer> stk=new Stack<>();
-                stk.push(HighHitCount);
-                while (stk.firstElement() == HighHitCount) {
-                    HighHitBtnCount.setText(Integer.toString(HighHitCount-=1));
-                }
-                stk.pop();
-        }
-    }
+
     public void LowMiss_isPressed () {
         //code for making the  low miss button work
         LowMissBtn.setOnClickListener(new View.OnClickListener() {
@@ -154,7 +192,7 @@ public class teleop extends AppCompatActivity {
                 LowMiss_isClicked=true;
                 LowMissTxt.setText(Integer.toString(LowMissCount++));
 
-                undoButton.setOnClickListener(v1 -> undoOperationTeleop());
+                //undoButton.setOnClickListener(v1 -> undoOperationTeleop());
             }
         });
     }
@@ -167,7 +205,7 @@ public class teleop extends AppCompatActivity {
                 HighMiss_isClicked=true;
                 HighMissBtnCount.setText(Integer.toString(HighMissCount++));
 
-                undoButton.setOnClickListener(v1 -> undoOperationTeleop());
+                //undoButton.setOnClickListener(v1 -> undoOperationTeleop());
             }
         });
     }
@@ -180,7 +218,7 @@ public class teleop extends AppCompatActivity {
             public void onClick (View view) {
                 LowHit_isClicked=true;
                 LowHitTxt.setText(Integer.toString(LowHitCount++));
-                undoButton.setOnClickListener(v1 -> undoOperationTeleop());
+                //undoButton.setOnClickListener(v1 -> undoOperationTeleop());
             }
         });
     }
@@ -194,7 +232,7 @@ public class teleop extends AppCompatActivity {
                 undoButton.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick (View v) {
-                        undoOperationTeleop();
+                        //undoOperationTeleop();
                     }
                 });
             }
@@ -203,9 +241,11 @@ public class teleop extends AppCompatActivity {
     public void foul_database(){
         foul.setOnClickListener(v -> {
             foul_counter.setText(Integer.toString(foul_count++));
+            //undoOperationTeleop();
         });
         tech_foul.setOnClickListener(v -> {
             tech_foul_counter.setText(Integer.toString(tech_foul_count++));
+            //undoOperationTeleop();
         });
     }
 

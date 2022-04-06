@@ -7,86 +7,27 @@
     tools:context=".autoscreen.MainActivity">
 
     <ImageView
-        android:id="@+id/timerPng"
-        android:layout_width="41dp"
-        android:layout_height="17dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.816"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/teamNumber"
-        app:srcCompat="@android:drawable/ic_lock_idle_alarm" />
-
-    <ImageView
-        android:id="@+id/teamPNG"
-        android:layout_width="41dp"
-        android:layout_height="17dp"
-        android:layout_marginEnd="68dp"
-        app:layout_constraintBottom_toTopOf="@+id/startMatchTimer"
-        app:layout_constraintEnd_toStartOf="@+id/timerPng"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/simple_two_business_people_handshake_line_icon_symbol_sign_vector_illustration_design_isolated_white_background_element_110609180" />
-
-    <ImageView
-        android:id="@+id/layerPNG"
-        android:layout_width="41dp"
-        android:layout_height="17dp"
-        android:layout_marginStart="60dp"
-        android:layout_marginTop="48dp"
+        android:id="@+id/imageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="60dp"
+        app:layout_constraintEnd_toStartOf="@+id/teamNumber"
+        app:layout_constraintHorizontal_bias="0.637"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/ic_layers_small" />
-
-    <TextView
-        android:id="@+id/matchNumber"
-        android:layout_width="wrap_content"
-        android:layout_height="17dp"
-        android:layout_marginTop="48dp"
-        android:layout_marginEnd="140dp"
-        android:text="TextView"
-        app:layout_constraintEnd_toStartOf="@+id/teamPNG"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <ImageView
-        android:id="@+id/boardPNG"
-        android:layout_width="wrap_content"
-        android:layout_height="17dp"
-        android:layout_marginTop="16dp"
-        app:layout_constraintEnd_toStartOf="@+id/boardTxt"
-        app:layout_constraintHorizontal_bias="0.38"
-        app:layout_constraintStart_toEndOf="@+id/matchNumber"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@android:drawable/ic_input_get" />
-
-    <TextView
-        android:id="@+id/boardTxt"
-        android:layout_width="wrap_content"
-        android:layout_height="17dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="32dp"
-        android:text="TextView"
-        app:layout_constraintEnd_toStartOf="@+id/teamPNG"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:srcCompat="@drawable/ic_people_small" />
 
     <TextView
         android:id="@+id/teamNumber"
-        android:layout_width="wrap_content"
-        android:layout_height="17dp"
-        android:layout_marginTop="16dp"
+        android:layout_width="79dp"
+        android:layout_height="24dp"
+        android:layout_marginTop="56dp"
+        android:layout_marginEnd="188dp"
         android:text="TextView"
-        app:layout_constraintEnd_toStartOf="@+id/timerPng"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/teamPNG"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/timerTxt"
-        android:layout_width="wrap_content"
-        android:layout_height="17dp"
-        android:text="TextView"
+        app:layout_constraintBottom_toTopOf="@+id/undoButton"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toEndOf="@+id/timerPng"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
 
     <TextView
         android:id="@+id/endgame_txt"
@@ -97,36 +38,15 @@
         app:layout_constraintBottom_toTopOf="@+id/linearLayout"
         app:layout_constraintStart_toStartOf="parent" />
 
-    <Button
-        android:id="@+id/startMatchTimer"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Start Timer"
-        app:layout_constraintBottom_toTopOf="@+id/linearLayout"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.537"
-        app:layout_constraintStart_toEndOf="@+id/endgame_txt"
-        tools:ignore="SpeakableTextPresentCheck" />
-
-    <ImageButton
-        android:id="@+id/pauseBtn"
-        android:layout_width="50dp"
-        android:layout_height="44dp"
-        android:visibility="invisible"
-        app:layout_constraintBottom_toTopOf="@+id/linearLayout"
-        app:layout_constraintStart_toStartOf="@+id/startMatchTimer"
-        app:srcCompat="@android:drawable/ic_media_pause"
-        tools:visibility="invisible" />
-
     <ImageButton
         android:id="@+id/commentBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:visibility="visible"
-        app:layout_constraintBottom_toBottomOf="@+id/startMatchTimer"
+        app:layout_constraintBottom_toBottomOf="@+id/undoButton"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/startMatchTimer"
-        app:layout_constraintTop_toTopOf="@+id/startMatchTimer"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/undoButton"
         app:srcCompat="@android:drawable/sym_action_chat"
         tools:ignore="SpeakableTextPresentCheck,ImageContrastCheck"
         tools:visibility="visible" />
@@ -291,11 +211,9 @@
         android:id="@+id/undoButton"
         android:layout_width="54dp"
         android:layout_height="48dp"
-        app:layout_constraintBottom_toBottomOf="@+id/startMatchTimer"
-        app:layout_constraintEnd_toEndOf="@+id/startMatchTimer"
-        app:layout_constraintStart_toEndOf="@+id/pauseBtn"
-        app:layout_constraintTop_toTopOf="@+id/startMatchTimer"
         app:srcCompat="@android:drawable/ic_menu_revert"
-        tools:ignore="SpeakableTextPresentCheck" />
+        tools:ignore="SpeakableTextPresentCheck"
+        tools:layout_editor_absoluteX="223dp"
+        tools:layout_editor_absoluteY="105dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

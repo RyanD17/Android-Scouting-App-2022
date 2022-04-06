@@ -19,6 +19,7 @@ import java.util.Stack;
 
 public class MainActivity extends AppCompatActivity {
 
+    @SuppressLint("SetTextI18n")
 
     public Stack<Integer> stk = new Stack<>();
 
@@ -55,8 +56,6 @@ public class MainActivity extends AppCompatActivity {
         autoLowMiss_isPressed();
         autoHighHit_isPressed();
         autoLowHit_isPressed();
-
-
 
         commentButton.setOnClickListener(v -> {
             Intent intent = new Intent(MainActivity.this, CommentActivity.class);
@@ -96,6 +95,7 @@ public class MainActivity extends AppCompatActivity {
                 stk.pop();
         }
     }
+
     public void autoHighHit_isPressed (){
         //code for making the auto high hit button work
         autoHighHitBtn.setOnClickListener(new View.OnClickListener() {
@@ -108,7 +108,6 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-    @SuppressLint("SetTextI18n")
     public void autoLowHit_isPressed (){
         //code for making the auto low hit button work
         autoLowHitBtn.setOnClickListener(new View.OnClickListener() {
@@ -122,7 +121,6 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-    @SuppressLint("SetTextI18n")
     public void autoHighMiss_isPressed (){
         //code for making the auto high miss button work
         autoHighMissBtn.setOnClickListener(new View.OnClickListener() {

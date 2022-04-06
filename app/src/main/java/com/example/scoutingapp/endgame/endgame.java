@@ -7,8 +7,10 @@ import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ToggleButton;
 
+import com.example.scoutingapp.CommentActivity;
 import com.example.scoutingapp.R;
 import com.example.scoutingapp.autoscreen.MainActivity;
 import com.example.scoutingapp.qr_code;
@@ -50,9 +52,12 @@ public class endgame extends MainActivity {
         lowRung=findViewById(R.id.climb_low);
         transversalRung=findViewById(R.id.climb_traversal);
         slow = findViewById(R.id.climb_slow);
+        medium = findViewById(R.id.climb_medum);
+        fast = findViewById(R.id.fast_climb);
 
         goToTeleop = findViewById(R.id.goToTeleop);
         goToQRCode = findViewById(R.id.goToQRCode);
+        ImageButton commentButton =findViewById(R.id.commentBtn);
 
         sp=getSharedPreferences("My Shared Prefs", Context.MODE_PRIVATE);
 
@@ -63,6 +68,9 @@ public class endgame extends MainActivity {
         midRung_isPressed();
         HighRung_isPressed();
         transversalRung_IsPressed();
+        slowClicked();
+        mediumClicked();
+        FastIsClicked();
 
         goToTeleop.setOnClickListener(v -> {
             Intent teleopIntent = new Intent(endgame.this, teleop.class);
@@ -73,16 +81,25 @@ public class endgame extends MainActivity {
             Intent goToQRCode = new Intent(this, qr_code.class);
             startActivity(goToQRCode);
         });
+        commentButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick (View view) {
+                Intent goToComment = new Intent(endgame.this, CommentActivity.class);
+                startActivity(goToComment);
+;            }
+        });
     }
 
     public void noneBtn_isPressed ()  {
         noneBtn.setOnClickListener(v -> {
+            none_Clicked = true;
             if (none_Clicked){
                 noneBtn.setBackgroundColor(Color.GREEN);
                 attempt.setBackgroundColor(Color.RED);
                 success.setBackgroundColor(Color.RED);
             }
             else {
+                none_Clicked = false;
                 noneBtn.setBackgroundColor(Color.RED);
             }
         });
@@ -92,8 +109,8 @@ public class endgame extends MainActivity {
         attempt.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick (View view) {
+                attempt_isClicked = true;
                 if (attempt_isClicked){
-                    attempt_isClicked = true;
                     noneBtn.setBackgroundColor(Color.RED);
                     attempt.setBackgroundColor(Color.GREEN);
                     success.setBackgroundColor(Color.RED);
@@ -109,8 +126,8 @@ public class endgame extends MainActivity {
         success.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick (View view) {
+                success_Clicked=true;
                 if (success_Clicked) {
-                    success_Clicked=true;
                     noneBtn.setBackgroundColor(Color.RED);
                     attempt.setBackgroundColor(Color.RED);
                     success.setBackgroundColor(Color.GREEN);
@@ -127,8 +144,8 @@ public class endgame extends MainActivity {
         lowRung.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick (View view) {
+                lowRung_isClicked = true;
                 if (lowRung_isClicked) {
-                    lowRung_isClicked = true;
                     lowRung.setBackgroundColor(Color.GREEN);
                     midRung.setBackgroundColor(Color.RED);
                     highRung.setBackgroundColor(Color.RED);
@@ -145,14 +162,14 @@ public class endgame extends MainActivity {
         midRung.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick (View view) {
-                if (medium_isClicked) {
-                    midRung_isClicked  = true;
+                midRung_isClicked  = true;
+                if (midRung_isClicked) {
                     midRung.setBackgroundColor(Color.GREEN);
                     lowRung.setBackgroundColor(Color.RED);
                     highRung.setBackgroundColor(Color.RED);
                     transversalRung.setBackgroundColor(Color.RED);
                 } else {
-                    midRung_isClicked = true;
+                    midRung_isClicked = false;
                     midRung.setBackgroundColor(Color.RED);
                 }
             }
@@ -163,11 +180,11 @@ public class endgame extends MainActivity {
         highRung.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick (View view) {
+                highRung_isClicked = true;
                 if (highRung_isClicked) {
-                    highRung_isClicked = true;
-                    highRung.setBackgroundColor(Color.RED);
+                    highRung.setBackgroundColor(Color.GREEN);
                     midRung.setBackgroundColor(Color.RED);
-                    lowRung.setBackgroundColor(Color.GREEN);
+                    lowRung.setBackgroundColor(Color.RED);
                     transversalRung.setBackgroundColor(Color.RED);
                 } else {
                     highRung_isClicked = false;
@@ -181,15 +198,70 @@ public class endgame extends MainActivity {
         transversalRung.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick (View view) {
+                taversal_isClicked = true;
                 if (taversal_isClicked) {
-                    taversal_isClicked = true;
-                    transversalRung.setBackgroundColor(Color.RED);
+                    transversalRung.setBackgroundColor(Color.GREEN);
                     highRung.setBackgroundColor(Color.RED);
                     midRung.setBackgroundColor(Color.RED);
-                    lowRung.setBackgroundColor(Color.GREEN);
+                    lowRung.setBackgroundColor(Color.RED);
                 } else {
                     taversal_isClicked = false;
                     transversalRung.setBackgroundColor(Color.RED);
+                }
+            }
+        });
+    }
+    public void slowClicked(){
+        slow.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick (View view) {
+                slow_Clicked = true;
+                if (slow_Clicked){
+                    slow.setBackgroundColor(Color.GREEN);
+                    medium.setBackgroundColor(Color.RED);
+                    fast.setBackgroundColor(Color.RED);
+                }
+                else {
+                    slow_Clicked = false;
+                    slow.setBackgroundColor(Color.RED);
+                }
+            }
+        });
+    }
+    public void mediumClicked (){
+        medium.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick (View view) {
+                medium_isClicked = true;
+                if (medium_isClicked){
+                    slow.setBackgroundColor(Color.RED);
+                    medium.setBackgroundColor(Color.GREEN);
+                    fast.setBackgroundColor(Color.RED);
+                }
+                else{
+                    medium_isClicked = false;
+                    medium.setBackgroundColor(Color.RED);
+                }
+            }
+        });
+    }
+    public void FastIsClicked (){
+        fast.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick (View view) {
+                fast_isClicked = true;
+                if (fast_isClicked){
+                    slow.setBackgroundColor(Color.RED);
+                    slow_Clicked = false;
+
+                    medium.setBackgroundColor(Color.RED);
+                    medium_isClicked = false;
+
+                    fast.setBackgroundColor(Color.GREEN);
+                }
+                else{
+                    medium_isClicked = false;
+                    medium.setBackgroundColor(Color.RED);
                 }
             }
         });

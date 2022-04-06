@@ -1,26 +1,34 @@
 package com.example.scoutingapp;
 
 import android.annotation.SuppressLint;
-import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Switch;
 
-public class select_board extends matchRow{
+public class select_board extends matchRow {
+
 
     @SuppressLint("UseSwitchCompatOrMaterialCode")
     public Switch r1;
+
+    @SuppressLint("UseSwitchCompatOrMaterialCode")
     public Switch r2;
+
+    @SuppressLint("UseSwitchCompatOrMaterialCode")
     public Switch r3;
 
+    @SuppressLint("UseSwitchCompatOrMaterialCode")
     public Switch b1;
+
+    @SuppressLint("UseSwitchCompatOrMaterialCode")
     public Switch b2;
+
+    @SuppressLint("UseSwitchCompatOrMaterialCode")
     public Switch b3;
 
     Button saveButton, okButton;
 
-    public SharedPreferences sp;
 
     public boolean r1IsPressed = false;
     public boolean r2IsPressed = false;
@@ -30,6 +38,11 @@ public class select_board extends matchRow{
     public boolean b1IsPressed = false;
     public boolean b2IsPressed = false;
     public boolean b3IsPressed = false;
+
+
+
+
+
 
 
     @Override
@@ -134,30 +147,7 @@ public class select_board extends matchRow{
             }
         });
     }
-    private void SaveButton () {
-        SharedPreferences.Editor r1Editor = sp.edit();
-        r1Editor.putString("Is Pressed", String.valueOf(r1IsPressed));
-        r1Editor.apply();
-
-        SharedPreferences.Editor r2Editor = sp.edit();
-        r2Editor.putString("Is Pressed", String.valueOf(r2IsPressed));
-        r2Editor.apply();
-
-
-        SharedPreferences.Editor r3Editor = sp.edit();
-        r3Editor.putString("Is Pressed", String.valueOf(r3IsPressed));
-        r3Editor.apply();
-
-        SharedPreferences.Editor B1Editor = sp.edit();
-        B1Editor.putString("Is Pressed", String.valueOf(b1IsPressed));
-        B1Editor.apply();
-
-        SharedPreferences.Editor B2Editor = sp.edit();
-        B2Editor.putString("Is Pressed", String.valueOf(b2IsPressed));
-        B2Editor.apply();
-
-        SharedPreferences.Editor B3Editor = sp.edit();
-        B3Editor.putString("Is Pressed", String.valueOf(b3IsPressed));
-        B3Editor.apply();
+    public void SaveButton () {
+        finishAndRemoveTask();
     }
 }
